@@ -1,0 +1,31 @@
+{
+  "name": "Unit-3-project",
+  "version": "1.0.0",
+  "description": "#### December 4th, 2020 --- ### Contributers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anthonyvseth/Unit-3-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anthonyvseth/Unit-3-project/issues"
+  },
+  "homepage": "https://github.com/Anthonyvseth/Unit-3-project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "sequelize-cli": "^6.2.0"
+  }
+}
