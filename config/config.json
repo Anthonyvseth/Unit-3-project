@@ -1,23 +1,17 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
+    "database": "p3_database_development",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "posgres"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "database": "p3_database_test",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "posgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "database": "p3_database_production",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "posgres"
   }
 }
