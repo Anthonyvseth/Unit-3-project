@@ -1,4 +1,4 @@
-const { Account, Todo } = require('../models')
+const { Account, Todo, Weblink } = require('../models')
 
 const getAll = async (req, res) => {
   try {
@@ -108,6 +108,21 @@ const createTodo = async (req, res) => {
   }
 }
 
+const createWeblink = async (req, res) => {
+  const accountId = req.params.account_id
+  console.log("HIT createWeblink with accountId: ", accountId)
+  try {
+    let weblinkBody = {
+      accountID: accountId,
+      ...req.body
+    }
+    let weblink = await Weblink.create(weblinkBody)
+    res.send(weblink)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getAll,
   getOne,
@@ -115,5 +130,6 @@ module.exports = {
   updateOne,
   deleteOne,
   signIn,
-  createTodo
+  createTodo,
+  createWeblink
 }
