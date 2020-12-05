@@ -30,7 +30,7 @@ export const __CheckSession = async () => {
 
 export const __LoginUser = async (userData) => {
   try {
-    const res = await ApiClient.post("/users/login", userData);
+    const res = await ApiClient.post("/accounts/login", userData);
     localStorage.setItem("account_id", res.data.id);
     console.log("Logged in");
     return res.data;
