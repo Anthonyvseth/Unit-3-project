@@ -39,6 +39,90 @@ Project was deployed on Heroku and can be found [here](link).
 
 ---
 
+## Back-end API
+.
+### Creating an account
+
+Path[POST]: ```localhost:3001/api/accounts```
+
+Request:
+``` json
+{
+	"firstName": "Ted",
+	"lastName": "Fossum",
+	"email": "ted@mail.com",
+	"password": "foo",
+	"zipCode": "30004",
+	"focus": "creating backend"
+}
+```
+Response:
+``` json
+{
+  "id": 4,
+  "firstName": "Logan",
+  "lastName": "Fossum",
+  "email": "logan@mail.com",
+  "password": "foo",
+  "zipCode": "30004",
+  "focus": "creating backend",
+  "updatedAt": "2020-12-05T16:00:49.830Z",
+  "createdAt": "2020-12-05T16:00:49.830Z",
+  "focusExpiry": null
+}
+```
+### Login
+Path[POST]: ```localhost:3001/api/accounts/login```
+
+Request:
+``` json
+{
+	"email": "logan@mail.com",
+	"password": "foo"
+}
+```
+Respone:
+``` json
+{
+  "id": 4,
+  "firstName": "Logan",
+  "lastName": "Fossum",
+  "email": "logan@mail.com",
+  "password": "foo",
+  "zipCode": "30004",
+  "focus": "creating backend",
+  "focusExpiry": null,
+  "createdAt": "2020-12-05T16:00:49.830Z",
+  "updatedAt": "2020-12-05T16:00:49.830Z",
+  "todos": []
+}
+```
+### Creating a Todo for an account
+Note: Todos are created within the context of an account. Therefore the ```api/accounts``` is used when creating the Todo. Further actions use the ```api/todos``` endpoint.
+
+Path[POST]: ```localhost:3001/api/accounts/:id/todos```
+
+Request:
+``` json
+{
+	"description": "This is my first todo",
+	"complete": false
+}
+```
+Response:
+``` json
+{
+  "id": 3,
+  "accountID": 4,
+  "description": "This is my first todo",
+  "complete": false,
+  "updatedAt": "2020-12-05T16:11:53.241Z",
+  "createdAt": "2020-12-05T16:11:53.241Z"
+}
+```
+
+
+---
 ### Future updates / Stretch Goals / Planned Improvements / Post MVP
 
 - [x] auth
