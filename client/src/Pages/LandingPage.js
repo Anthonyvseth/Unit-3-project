@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '../Button'
-import '../../style/LandingPage.css'
+import { Button } from '../components/Button'
+import '../styles/LandingPage.css'
 
 const LandingPage = () => {
 

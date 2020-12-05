@@ -8,5 +8,6 @@ Router.put('/:id', controller.updateOne)
 Router.delete('/:id', controller.deleteOne)
 Router.post('/login', controller.signIn)
 Router.post('/:account_id/todos', controller.createTodo)
+Router.post('/:account_id/weblinks', controller.createWeblink)
 
 module.exports = Router

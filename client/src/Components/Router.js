@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LandingPage from './Pages/LandingPage'
+import LandingPage from '../pages/LandingPage'
 
 
 const Router = () => {
