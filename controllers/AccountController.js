@@ -12,7 +12,13 @@ const getAll = async (req, res) => {
 const getOne = async (req, res) => {
   const entityId = req.params.id
   try {
-    const entity = await Account.findByPk(entityId)
+    const entity = await Account.findByPk(entityId,{
+      include: [
+        {
+          all: true,
+          nested: true
+         }
+      ]  })
     res.send(entity)
   } catch (error) {
     throw error
