@@ -1,21 +1,27 @@
-import React from 'react'
-import { Button } from '../components/Button'
-import '../styles/LandingPage.css'
+import React from "react";
+// import Button from "../Components/Button";
+import "../styles/LandingPage.css";
 
-const LandingPage = () => {
+export default ({ children }) => {
+  return <div className="">{children}</div>;
+};
 
-    return (
-        <div className='landing-container'>
-            <h1>Make Your Day</h1>
-            <p>lorem ipsum dsfj woeiaslkdj skdf asdkjfasdlkjsdjf kaslf</p>
-            <div className="landing-btns">
-                <Button
-                className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
-                    Get Started
-                </Button>
-            </div>
-        </div>
-    )
-}
+// const LandingPage = () => {
+//   return (
+//     <div className="landing-container">
+//       <h1>Make Your Day</h1>
+//       <p>lorem ipsum dsfj woeiaslkdj skdf asdkjfasdlkjsdjf kaslf</p>
+//       <div className="landing-btns">
+//         <Button
+//           className="btns"
+//           buttonStyle="btn--outline"
+//           buttonSize="btn--large"
+//         >
+//           Get Started
+//         </Button>
+//       </div>
+//     </div>
+//   );
+// };
 
-export default LandingPage
+// export default LandingPage;
