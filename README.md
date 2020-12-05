@@ -120,7 +120,29 @@ Response:
   "createdAt": "2020-12-05T16:11:53.241Z"
 }
 ```
+### Creating a Weblink for an account
+Note: Weblinks are created within the context of an account. Therefore the ```api/accounts``` is used when creating the Weblink. Further actions use the ```api/weblinks``` endpoint.
 
+Path[POST]: ```localhost:3001/api/accounts/:id/weblinks```
+
+Request:
+``` json
+{
+	"url": "nodejs.org/",
+	"favicon_url": null
+}
+```
+Response:
+``` json
+{
+  "id": 4,
+  "accountID": 2,
+  "url": "nodejs.org/",
+  "updatedAt": "2020-12-05T21:39:57.901Z",
+  "createdAt": "2020-12-05T21:39:57.901Z",
+  "favicon_url": null
+}
+```
 
 ---
 ### Future updates / Stretch Goals / Planned Improvements / Post MVP
