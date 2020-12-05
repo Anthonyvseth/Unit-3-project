@@ -1,18 +1,28 @@
-import React from 'react'
-import { Button } from '../components/Button'
+import React, {useState} from 'react'
+import { NavLink} from 'react-router-dom'
+import { Button } from '../Components/Button'
+
 import '../styles/LandingPage.css'
 
 const LandingPage = () => {
+    const [click, setClick] = useState(false)
+    const handleClick = () => setClick(!click)
 
     return (
         <div className='landing-container'>
             <h1>Make Your Day</h1>
             <p>lorem ipsum dsfj woeiaslkdj skdf asdkjfasdlkjsdjf kaslf</p>
             <div className="landing-btns">
+            <NavLink 
+            to='/register'
+            activeclassName='nav-active'
+            onClick={handleClick}
+             >
                 <Button
                 className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
                     Get Started
                 </Button>
+            </NavLink>
             </div>
         </div>
     )

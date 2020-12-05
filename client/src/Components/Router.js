@@ -1,19 +1,23 @@
 import React from 'react';
+import SignUp from './SignUp'
+import LandingPage from '../Pages/LandingPage'
+import {Switch, Route} from 'react-router-dom'
 
-import LandingPage from '../pages/LandingPage'
-
-
-const Router = () => {
+export default function Router() {
 
 
     return (
         <main>
-            
-            <LandingPage />
+            <Switch>
+                <Route exact path='/' 
+                component={() => (<LandingPage /> )}    
+                />
+                <Route exact path='/register' 
+                component={() => (<SignUp /> )}    
+                />
 
+            </Switch>
         </main>
     )
 
 }
-
-export default Router
