@@ -1,4 +1,4 @@
-const { User, Account, Profile } = require('../models')
+const { Account, Todo } = require('../models')
 
 const getAll = async (req, res) => {
   try {
@@ -72,7 +72,13 @@ const signIn = async (req, res, next) => {
       where: {
         email: accountEmail,
         password: accountPassword
-      }}
+      },
+    include: [
+      {
+        model: Todo,
+        as: 'todos',
+       }
+    ]}
     )
     res.send(account)
   } catch (error) {
@@ -82,11 +88,26 @@ const signIn = async (req, res, next) => {
   // response.status(401).send({ msg: 'Unauthorized' })
 }
 
+const createTodo = async (req, res) => {
+  const accountId = req.params.account_id
+  try {
+    let todoBody = {
+      accountID: accountId,
+      ...req.body
+    }
+    let todo = await Todo.create(todoBody)
+    res.send(todo)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getAll,
   getOne,
   createOne,
   updateOne,
   deleteOne,
-  signIn
+  signIn,
+  createTodo
 }
