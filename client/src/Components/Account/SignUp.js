@@ -1,5 +1,9 @@
 import React, {useState} from 'react'
+<<<<<<< HEAD:client/src/Components/Account/SignUp.js
 import { Button } from '../Button'
+=======
+import Button from './Button'
+>>>>>>> 8191dba90a8ab72c289a45a03c68305a79abb2b8:client/src/Components/SignUp.js
 import {NavLink} from 'react-router-dom'
 import TextInput from '../TextInput'
 import '../../styles/Form.css'
