@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import { Button } from './Button'
-import TextInput from './TextInput'
+import { Button } from '../Button'
+import TextInput from '../TextInput'
 
 const SignIn = () => {
 

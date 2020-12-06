@@ -1,6 +1,6 @@
 import React from 'react';
-import SignUp from './SignUp'
-import SignIn from './SignIn'
+import SignUp from './Account/SignUp'
+import SignIn from './Account/SignIn'
 import LandingPage from '../Pages/LandingPage'
 import {Switch, Route} from 'react-router-dom'
 
