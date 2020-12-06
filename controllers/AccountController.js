@@ -1,4 +1,4 @@
-const { Account, Todo } = require('../models')
+const { Account, Todo, Weblink } = require('../models')
 
 const getAll = async (req, res) => {
   try {
@@ -12,7 +12,13 @@ const getAll = async (req, res) => {
 const getOne = async (req, res) => {
   const entityId = req.params.id
   try {
-    const entity = await Account.findByPk(entityId)
+    const entity = await Account.findByPk(entityId,{
+      include: [
+        {
+          all: true,
+          nested: true
+         }
+      ]  })
     res.send(entity)
   } catch (error) {
     throw error
@@ -102,6 +108,21 @@ const createTodo = async (req, res) => {
   }
 }
 
+const createWeblink = async (req, res) => {
+  const accountId = req.params.account_id
+  console.log("HIT createWeblink with accountId: ", accountId)
+  try {
+    let weblinkBody = {
+      accountID: accountId,
+      ...req.body
+    }
+    let weblink = await Weblink.create(weblinkBody)
+    res.send(weblink)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getAll,
   getOne,
@@ -109,5 +130,6 @@ module.exports = {
   updateOne,
   deleteOne,
   signIn,
-  createTodo
+  createTodo,
+  createWeblink
 }

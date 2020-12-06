@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
         as: 'todos',
         onDelete: 'cascade',
         onUpdate: 'cascade'
+      }),
+      Account.hasMany(models.Weblink, {
+        foreignKey: 'account_id',
+        as: 'weblinks',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
     }
   };

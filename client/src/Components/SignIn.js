@@ -1,52 +1,55 @@
-import React, { useState } from "react";
-import TextInput from "./TextInput";
-// import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+
+import React from 'react'
+import {NavLink} from 'react-router-dom'
+import { Button } from './Button'
+import TextInput from './TextInput'
 
 const SignIn = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
 
-  //   const validateFormFields = () => {
-  //     return username.length > 0 && password.length > 0;
-  //   };
 
-  //   const handleChange = (target) => {
-  //     setUsername({ [target.name]: target.value });
-  //     setPassword({ [target.name]: target.value });
-  //     console.log(setUsername);
-  //   };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-
-  return (
-    <div className="container signup-page">
-      <div className="signup">
-        <div className="col s12 l8">
-          <div className="card-content">
-            <form className="" onSubmit={handleSubmit}>
-              <TextInput
-                placeholder="Email"
-                name="email"
-                type="email"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <TextInput
-                placeholder="Password"
-                name="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button className="">Sign Up</button>
+    return (
+        <div>
+            <h1>Sign in</h1>
+            <form className='form-content-right'>
+            <div className="form-inputs">
+                    <label htmlFor='email'
+                    className="form-label">
+                        Email
+                        <TextInput className='form-input'
+                        placeholder='email'
+                        name='email'
+                        type="email"
+                        
+                        />
+                    </label>
+                </div>
+                <div className="form-inputs">
+                    <label htmlFor='password'
+                    className="form-label">
+                        Password
+                        <TextInput className='form-input'
+                        placeholder='password'
+                        name='password'
+                        type="password"
+                        
+                        />
+                    </label>
+                </div>
+                <div>
+            <NavLink 
+            to='/profile'
+            activeclassName='nav-active'
+             >
+                <Button
+                className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
+                    Submit
+                </Button>
+            </NavLink>
+            </div>
             </form>
-          </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-export default SignIn;
+export default SignIn
+
