@@ -1,7 +1,7 @@
 import React from 'react';
 import SignUp from './SignUp'
 import SignIn from './SignIn'
-import LandingPage from '../Pages/LandingPage'
+import LandingPage from '../pages/LandingPage'
 import {Switch, Route} from 'react-router-dom'
 
 export default function Router() {

@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react'
 import { NavLink} from 'react-router-dom'
-import { Button } from '../Components/Button'
+import Button from '../components/Button'
 
 import '../styles/LandingPage.css'
 
