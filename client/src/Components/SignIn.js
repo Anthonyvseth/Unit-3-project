@@ -1,13 +1,6 @@
-<<<<<<< HEAD:client/src/Components/Account/SignIn.js
-import React from 'react'
-import {NavLink} from 'react-router-dom'
-import { Button } from '../Button'
-import TextInput from '../TextInput'
-=======
 import React, { useState } from 'react'
 import TextInput from './TextInput'
 import { __LoginUser } from '../services/AccountServices'
->>>>>>> 8191dba90a8ab72c289a45a03c68305a79abb2b8:client/src/Components/SignIn.js
 
 const SignIn = (props) => {
     const [loginValue, setLoginValue] = useState('')
@@ -44,7 +37,9 @@ const SignIn = (props) => {
     return (
         <div>
             <h1>Sign in</h1>
-            <form className='form-content-right' onSubmit={e => handleSubmit(e)}>
+            <form
+                className='form-content-right'
+                onSubmit={e => handleSubmit(e)}>
                 <div className="form-inputs">
                     <label htmlFor='email'
                         className="form-label">
