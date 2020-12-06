@@ -2,7 +2,7 @@ import ApiClient from "./ApiClient";
 
 export const __GetProfile = async (userId) => {
   try {
-    const res = await ApiClient.get(`/users/${userId}`);
+    const res = await ApiClient.get(`/accounts/${userId}`);
     return res.data;
   } catch (error) {
     throw error;
@@ -11,7 +11,7 @@ export const __GetProfile = async (userId) => {
 
 export const __RegisterUser = async (formData) => {
   try {
-    const res = await ApiClient.post("/users/register", formData);
+    const res = await ApiClient.post("/accounts/register", formData);
     return res.data;
   } catch (error) {
     throw error;
@@ -20,7 +20,7 @@ export const __RegisterUser = async (formData) => {
 
 export const __CheckSession = async () => {
   try {
-    const res = await ApiClient.get("/users/refresh/session");
+    const res = await ApiClient.get("/accounts/refresh/session");
     console.log(res.data);
     return res.data;
   } catch (error) {
