@@ -1,29 +1,20 @@
-import React from 'react';
-import SignUp from './SignUp'
-import SignIn from './SignIn'
-import Home from './Home'
-import LandingPage from './LandingPage'
-import {Switch, Route} from 'react-router-dom'
+import React from "react";
+import Button from "../components/Button";
 
-export default function Router() {
-
-
-    return (
-        <main>
-            <Switch>
-                <Route exact path='/' 
-                component={() => (<LandingPage /> )}    
-                />
-                <Route exact path='/register' 
-                component={(props) => (<SignUp {...props} /> )}    
-                />
-                <Route exact path='/signin' 
-                component={(props) => (<SignIn {...props}  /> )}    
-                />
-                <Route exact path='/home'
-                component={(props) => (<Home />)}/>
-            </Switch>
-        </main>
-    )
-
-}
+export default (props) => {
+  return (
+    <div className="landing-container">
+      <h1>Make Your Day</h1>
+      <p>lorem ipsum dsfj woeiaslkdj skdf asdkjfasdlkjsdjf kaslf</p>
+      <div className="landing-btns">
+        <Button
+          className="btns"
+          buttonStyle="btn--outline"
+          buttonSize="btn--large"
+        >
+          add Focus
+        </Button>
+      </div>
+    </div>
+  );
+};
