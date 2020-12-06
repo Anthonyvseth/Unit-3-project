@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Components/Button";
+import Button from "../components/Button";
 
 export default (props) => {
   return (
@@ -12,7 +12,7 @@ export default (props) => {
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
-          Get Started
+          add Focus
         </Button>
       </div>
     </div>
