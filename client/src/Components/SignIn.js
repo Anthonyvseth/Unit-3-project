@@ -37,7 +37,9 @@ const SignIn = (props) => {
     return (
         <div>
             <h1>Sign in</h1>
-            <form className='form-content-right' onSubmit={e => handleSubmit(e)}>
+            <form
+                className='form-content-right'
+                onSubmit={e => handleSubmit(e)}>
                 <div className="form-inputs">
                     <label htmlFor='email'
                         className="form-label">
