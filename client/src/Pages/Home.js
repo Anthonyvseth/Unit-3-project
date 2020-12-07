@@ -1,9 +1,11 @@
 import React from 'react';
 import Button from '../components/Button';
 import DateTime from '../components/DateTime';
+import SignOut from '../components/SignOut'
 
 export default (props) => {
   console.log('home props: ', props.account);
+  const { onClickSignOut } = props
 
   return (
     <div className='landing-container'>
@@ -21,6 +23,9 @@ export default (props) => {
       <h1>
         <DateTime></DateTime>
       </h1>
+      <div>
+        <SignOut onClick={onClickSignOut}/>
+      </div>
     </div>
   );
 };
