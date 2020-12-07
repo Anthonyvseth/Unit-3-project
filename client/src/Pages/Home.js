@@ -1,16 +1,18 @@
-import React from "react";
-import Button from "../components/Button";
+import React from 'react';
+import Button from '../components/Button';
 
 export default (props) => {
+  console.log('home props: ', props.account);
+
   return (
-    <div className="landing-container">
+    <div className='landing-container'>
       <h1>Make Your Day</h1>
-      <p>lorem ipsum dsfj woeiaslkdj skdf asdkjfasdlkjsdjf kaslf</p>
-      <div className="landing-btns">
+      <p> Welcome, {props.account.firstName}</p>
+      <div className='landing-btns'>
         <Button
-          className="btns"
-          buttonStyle="btn--outline"
-          buttonSize="btn--large"
+          className='btns'
+          buttonStyle='btn--outline'
+          buttonSize='btn--large'
         >
           add Focus
         </Button>
