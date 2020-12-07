@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-// import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import Button from './Button'
-import TextInput from './TextInput'
+import Button from '../components/Button'
+import TextInput from '../components/TextInput'
 import { __RegisterUser } from '../services/AccountServices'
 
 import '../styles/Form.css'
 
-const SignUp = (props) => {
+const SignUpPage = (props) => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setlastName] = useState('')
     const [email, setEmail] = useState('')
@@ -65,8 +65,8 @@ const SignUp = (props) => {
     return (
         <div>
             <form
-             className='form-content-right'
-             onSubmit={e => handleSubmit(e)}
+                className='form-content-right'
+                onSubmit={e => handleSubmit(e)}
             >
                 <h1>Sign Up</h1>
                 <div className="form-inputs">
@@ -135,14 +135,20 @@ const SignUp = (props) => {
                     </label>
                 </div>
                 <div>
-                <Button
-                    className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
-                    Submit
-                </Button>
+                    <Button
+                        className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
+                        Submit
+                    </Button>
                 </div>
             </form>
-
+            <div>
+                <NavLink
+                    to='/signin'
+                    activeclassName='nav-active'>
+                    <h2>Existing user go to login</h2>
+                </NavLink>
+            </div>
         </div>
     )
 }
-export default SignUp
+export default SignUpPage
