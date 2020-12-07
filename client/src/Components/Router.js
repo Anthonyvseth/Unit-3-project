@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SignUpPage from '../pages/SignUpPage';
 import SignInPage from '../pages/SignInPage';
 import Home from '../pages/Home';
@@ -16,12 +16,12 @@ export default function Router() {
   const retrieveAccount = async (account_id) => {
     try {
       const x = await __GetProfile(parseInt(localAccountId));
-      console.log('whats x:', x);
+      // console.log('whats x:', x);
       setAccount(x);
-      console.log('accountState: ', account);
+      // console.log('accountState: ', account);
       return x;
     } catch (error) {
-      console.log('retr. account: ', error);
+      // console.log('retr. account: ', error);
     }
   };
 
@@ -29,13 +29,8 @@ export default function Router() {
   if (account === null && localAccountId !== null) {
     const retrievedAccount = retrieveAccount(localAccountId);
     console.log('ret acct: ', retrievedAccount);
-    // setAccount(retrievedAccount);
-    // console.log('accountState: ', account);
+    setAccount(retrievedAccount);
   }
-
-  useEffect(() => {
-    setAccount();
-  }, []);
 
   return (
     <main>
