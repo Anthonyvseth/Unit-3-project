@@ -54,7 +54,7 @@
   color: #fff;
 }
 
-.form-content-center {
+.form-content-right {
   border-radius: 10px 10px 10px 10px;
   position: center;
   background: linear-gradient(90deg, rgb(114, 114, 114) 0%, rgb(163, 94, 94) 100%);
