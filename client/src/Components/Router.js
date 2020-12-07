@@ -35,6 +35,10 @@ export default function Router() {
     setAccount(retrievedAccount);
   }
 
+  const clearAccount = () => {
+    setAccount(null);
+  };
+
   return (
     <main>
       <Switch>
