@@ -1,6 +1,7 @@
 import ApiClient from './ApiClient'
 
-export const __GetTodos = async (accountId) => {
+export const __GetTodos = async () => {
+  const accountId = localStorage.getItem('account_id')
   try {
     const res = await ApiClient.get(`/accounts/${accountId}/todos`)
     return res.data.todos
@@ -10,9 +11,10 @@ export const __GetTodos = async (accountId) => {
 }
 
 export const __CreateTodo = async (formData) => {
-  const account_id = localStorage.getItem('accountId')
+  const accountId = localStorage.getItem('account_id')
   try {
-    const res = await ApiClient.post(`/accounts/${account_id}`, formData)
+    console.log('__CreateTodo todo formData',formData)
+    const res = await ApiClient.post(`/accounts/${accountId}/todos`, formData)
     return res.data
   } catch (error) {
     throw error
