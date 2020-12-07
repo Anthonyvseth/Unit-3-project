@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import SignUpPage from '../pages/SignUpPage';
-import SignInPage from '../pages/SignInPage';
+
 import Home from '../pages/Home';
 import LandingPage from '../pages/LandingPage';
+import SignUpPage from '../pages/SignUpPage';
+import SignInPage from '../pages/SignInPage';
+import ProtectedRoute from '../components/ProtectedRoute';
+
 import { Switch, Route } from 'react-router-dom';
 import { __GetProfile } from '../services/AccountService';
 
@@ -46,10 +49,12 @@ export default function Router() {
           path='/signin'
           component={(props) => <SignInPage {...props} />}
         />
-        <Route
-          exact
+        <ProtectedRoute
+          authenticated={account !== null}
           path='/home'
-          component={(props) => <Home {...props} account={account} />}
+          component={(props) => (
+            <Home {...props} account={account} onClickSignOut={clearAccount} />
+          )}
         />
       </Switch>
     </main>
