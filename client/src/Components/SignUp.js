@@ -140,15 +140,6 @@ const SignUp = (props) => {
                     Submit
                 </Button>
                 </div>
-                {/* <div>
-                    <NavLink
-                        to='/signin'
-                        activeclassName='nav-active'
-                        onClick={handleClick}
-                    >
-                        <h2>Existing user go to login</h2>
-                    </NavLink>
-                </div> */}
             </form>
 
         </div>
