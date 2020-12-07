@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import SignUp from './SignUp';
-import SignIn from './SignIn';
+import SignUpPage from '../pages/SignUpPage';
+import SignInPage from '../pages/SignInPage';
 import Home from '../pages/Home';
 import LandingPage from '../pages/LandingPage';
 import { Switch, Route } from 'react-router-dom';
-import { __GetProfile } from '../services/AccountServices';
+import { __GetProfile } from '../services/AccountService';
 
 export default function Router() {
   const [account, setAccount] = useState(null);
@@ -41,11 +41,15 @@ export default function Router() {
     <main>
       <Switch>
         <Route exact path='/' component={() => <LandingPage />} />
-        <Route exact path='/register' component={() => <SignUp />} />
+        <Route
+          exact
+          path='/register'
+          component={(props) => <SignUpPage {...props} />}
+        />
         <Route
           exact
           path='/signin'
-          component={(props) => <SignIn {...props} />}
+          component={(props) => <SignInPage {...props} />}
         />
         <Route
           exact

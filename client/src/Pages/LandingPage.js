@@ -11,6 +11,8 @@ const LandingPage = () => {
 
     return (
         <div className='landing-container'>
+        <video src='/videos/video-1.mp4' autoPlay loop muted />
+
             <h1>Make Your Day</h1>
             <p>lorem ipsum dsfj woeiaslkdj skdf asdkjfasdlkjsdjf kaslf</p>
             <div className="landing-btns">

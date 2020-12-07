@@ -13,7 +13,8 @@ export const __GetProfile = async (account_id) => {
 
 export const __RegisterUser = async (formData) => {
   try {
-    const res = await ApiClient.post('/accounts/register', formData);
+    const res = await ApiClient.post('/accounts/', formData);
+    setLocalAccountId(res.data.id);
     return res.data;
   } catch (error) {
     throw error;
@@ -33,10 +34,18 @@ export const __CheckSession = async () => {
 export const __LoginUser = async (userData) => {
   try {
     const res = await ApiClient.post('/accounts/login', userData);
-    localStorage.setItem('account_id', res.data.id);
+    setLocalAccountId(res.data.id);
     console.log('Logged in');
     return res.data;
   } catch (error) {
     throw error;
   }
+};
+
+export const _SignOutUser = () => {
+  localStorage.clear('account_id');
+};
+
+const setLocalAccountId = (account_id) => {
+  localStorage.setItem('account_id', account_id);
 };
