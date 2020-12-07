@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../components/Button";
 import DateTime from '../components/DateTime'
 
+
 export default (props) => {
   return (
     <div className="landing-container">
@@ -9,6 +10,9 @@ export default (props) => {
       <h1>
         <DateTime></DateTime>
       </h1>
+      <div>
+        
+      </div>
     </div>
   );
 };

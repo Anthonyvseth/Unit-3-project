@@ -62,7 +62,7 @@ const SignUp = (props) => {
     return (
         <div>
             <form
-             className='form-content-right'
+             className='form-content-center'
              onSubmit={e => handleSubmit(e)}
             >
                 <h1>Sign Up</h1>
