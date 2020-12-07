@@ -25,7 +25,8 @@ export default (props) => {
         <DateTime></DateTime>
       </h1>
       <div>
-        <TodoList // we are going to need to send todolist as props 
+        <TodoList // we are going to need to send todolist as props
+        todos={props.account}
         />
         <SignOut onClick={onClickSignOut}/>
       </div>
