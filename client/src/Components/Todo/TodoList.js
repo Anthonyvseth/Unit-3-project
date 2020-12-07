@@ -4,19 +4,14 @@ import TodoForm from './TodoForm';
 import {__GetTodos} from '../../services/TodoService'
 
 function TodoList(props) {
-  const [todos, setTodos] = useState([]);
-  const [complete, setComplete] = useState([]);
-  const [formError, setFormError] = useState(false);
+ 
+// get the todos to display
 
-  const todoField = (e) => {
-    setTodos(e.target.value);
-    console.log('todos', todos);
-  };
+// retrieve todolist from props
 
-  const completeField = (e) => {
-    setComplete(e.target.value);
-    console.log('is complete?', complete);
-  };
+// iterate through todolist
+
+// render new todo component
 
   return (
     <>
