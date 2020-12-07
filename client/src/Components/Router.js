@@ -15,7 +15,7 @@ export default function Router() {
                 component={() => (<LandingPage /> )}    
                 />
                 <Route exact path='/register' 
-                component={(props) => (<SignUp {...props} /> )}    
+                component={() => (<SignUp /> )}    
                 />
                 <Route exact path='/signin' 
                 component={(props) => (<SignIn {...props}  /> )}    

@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
-// import { NavLink } from 'react-router-dom'
-
 import Button from './Button'
 import TextInput from './TextInput'
 import { __RegisterUser } from '../services/AccountServices'
-
 import '../styles/Form.css'
 
 const SignUp = (props) => {
