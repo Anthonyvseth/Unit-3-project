@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import TextInput from './TextInput'
+import TextInput from '../components/TextInput'
 import { __LoginUser } from '../services/AccountServices'
 
-const SignIn = (props) => {
+const SignInPage = (props) => {
     const [loginValue, setLoginValue] = useState('')
     const [passwordValue, setPasswordValue] = useState('')
     const [formError, setFormError] = useState(false)
@@ -75,5 +75,5 @@ const SignIn = (props) => {
     )
 }
 
-export default SignIn
+export default SignInPage
 

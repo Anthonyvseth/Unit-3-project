@@ -1,6 +1,6 @@
 import React from 'react';
-import SignUp from './SignUp'
-import SignIn from './SignIn'
+import SignUpPage from '../pages/SignUpPage'
+import SignInPage from '../pages/SignInPage'
 import Home from '../pages/Home'
 import LandingPage from '../pages/LandingPage'
 import {Switch, Route} from 'react-router-dom'
@@ -15,10 +15,10 @@ export default function Router() {
                 component={() => (<LandingPage /> )}    
                 />
                 <Route exact path='/register' 
-                component={() => (<SignUp /> )}    
+                component={(props) => (<SignUpPage {...props} /> )}    
                 />
                 <Route exact path='/signin' 
-                component={(props) => (<SignIn {...props}  /> )}    
+                component={(props) => (<SignInPage {...props}  /> )}    
                 />
                 <Route exact path='/home'
                 component={(props) => (<Home />)}/>
