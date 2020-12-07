@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom'
 import Button from '../components/Button'
 import TextInput from '../components/TextInput'
 import { __RegisterUser } from '../services/AccountServices'
-
 import '../styles/Form.css'
 
 const SignUpPage = (props) => {
