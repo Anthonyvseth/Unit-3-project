@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../components/Button';
 import DateTime from '../components/DateTime';
 import SignOut from '../components/SignOut';
+import WebLinkList from '../components/WebLink/WebLinkList';
 
 export default (props) => {
   // console.log('home props: ', props.account);
@@ -23,6 +24,11 @@ export default (props) => {
       <h1>
         <DateTime></DateTime>
       </h1>
+      <div>
+        <h1>
+          <WebLinkList weblink={props.account} />
+        </h1>
+      </div>
       <div>
         <SignOut onClick={onClickSignOut} />
       </div>
