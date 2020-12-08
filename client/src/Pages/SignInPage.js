@@ -24,6 +24,7 @@ const SignInPage = (props) => {
       const userData = { email: loginValue, password: passwordValue };
       const loginResponse = await __LoginUser(userData);
       console.log('Login Response: ', loginResponse);
+      props.setAccount(loginResponse)
       props.history.push('/home');
       // props.toggleAuthenticated(true, loginData.user, () => this.props.history.push('/list')
       // )

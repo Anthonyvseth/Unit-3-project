@@ -57,6 +57,7 @@ const SignUp = (props) => {
         } catch (error) {
             setFormError(true)
         }
+        
     }
 
     return (
