@@ -1,11 +1,9 @@
 // Basic react imports
-import React from 'react';
 // Import ToDo Update Service
-import __UpdateWebLink from '../../services/WeblinkService';
 // Import Todo Delete Service
-import __DeleteWebLink from '../../services/WeblinkService';
 
 //import your styles
+
 
 //declare your function component
 
@@ -22,19 +20,3 @@ import __DeleteWebLink from '../../services/WeblinkService';
 //  - icon to mark deleted, when clicked calls function above
 // use either html ID or name fields to hold the todo item ID, which
 
-const AddLink = (props) => {
-  return (
-    <div>
-      <label>URL:</label>
-      <input
-        type='text'
-        name='link'
-        value={props.value}
-        onChange={props.handleChange}
-      />
-      <button onClick={props.addLink}>Add</button>
-    </div>
-  );
-};
-
-export default AddLink;

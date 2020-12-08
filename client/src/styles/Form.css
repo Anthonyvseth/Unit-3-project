@@ -55,8 +55,8 @@
 }
 
 .form-content-right {
-  border-radius: 0 10px 10px 0;
-  position: relative;
+  border-radius: 10px 10px 10px 10px;
+  position: center;
   background: linear-gradient(90deg, rgb(114, 114, 114) 0%, rgb(163, 94, 94) 100%);
 }
 
@@ -82,11 +82,13 @@
 }
 
 .form-inputs {
+    align-items: right;
   margin-bottom: 0.5rem;
   width: 80%;
 }
 
 .form-inputs p {
+    align-items: right;
   font-size: 0.8rem;
   margin-top: 0.5rem;
   color: #f00e0e;
@@ -94,6 +96,7 @@
 
 .form-label {
   display: inline-block;
+  align-self: right;
   font-size: 0.8rem;
   margin-bottom: 6px;
   color: #fff;

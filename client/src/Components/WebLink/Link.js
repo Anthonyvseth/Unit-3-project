@@ -6,7 +6,7 @@ const Links = (props) => {
       {props.links.map((link, index) => (
         <li key={index}>
           {link}
-          <button onClick={() => props.removeLink(index)}>Delete</button>
+          <button onClick={() => props.deleteLink(index)}>Delete</button>
         </li>
       ))}
     </ul>

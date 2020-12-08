@@ -4,7 +4,6 @@ import AddLink from './AddLink';
 
 const WebLinkList = () => {
   const [links, manageLinks] = useState([]);
-
   const [newLink, setLink] = useState('');
 
   const addLink = () => {
@@ -25,7 +24,7 @@ const WebLinkList = () => {
   };
 
   return (
-    <div className='list'>
+    <div className='links'>
       <AddLink handleChange={handleChange} addLink={addLink} value={newLink} />
       <Links links={links} deleteLink={deleteLink} />
     </div>
