@@ -31,7 +31,7 @@ const SignUpPage = (props) => {
       case 'password':
         setPassword(fieldValue);
         break;
-      case 'zipCode':
+      case 'zipcode':
         setZipCode(fieldValue);
         break;
     }
@@ -48,14 +48,12 @@ const SignUpPage = (props) => {
       password: password,
       zipCode: zipCode,
     };
-
+    console.log('formState: ', formState)
     try {
-      const signUpResponse = await __RegisterUser(formState);
-      console.log('Response - SignUp: ', signUpResponse);
-
+      const accountResponse = await __RegisterUser(formState);
+      props.setAccount(accountResponse)
+      // console.log('Response - SignUp: ', signUpResponse);
       props.history.push('/home');
-      // props.toggleAuthenticated(true, loginData.user, () => this.props.history.push('/list')
-      // )
     } catch (error) {
       setFormError(true);
     }

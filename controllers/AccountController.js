@@ -130,7 +130,7 @@ const getWeather = async (req, res) => {
   console.log('HIT getWeather')
   const account = await getAccount(req.params.id)
 
-  console.log('getWeather Zip: ', account)
+  console.log('getWeather Zip: ', account.zipCode)
   try {
     const weather = await getCurrentWeather(account.zipCode)
     console.log('Weather: ', weather)

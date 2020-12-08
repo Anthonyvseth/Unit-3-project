@@ -46,12 +46,12 @@ export default function Router() {
         <Route
           exact
           path='/register'
-          component={(props) => <SignUpPage {...props} />}
+          component={(props) => <SignUpPage {...props} setAccount={setAccount} />}
         />
         <Route
           exact
           path='/signin'
-          component={(props) => <SignInPage {...props} />}
+          component={(props) => <SignInPage {...props} setAccount={setAccount} />}
         />
         <ProtectedRoute
           authenticated={account !== null}
