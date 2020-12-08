@@ -3,9 +3,10 @@ import Button from '../components/Button';
 import DateTime from '../components/DateTime';
 import SignOut from '../components/SignOut'
 import TodoList from '../components/Todo/TodoList'
+import Focus from '../components/Focus'
 
 export default (props) => {
-  console.log('home props: ', props.account);
+  //console.log('home props: ', props.account);
   const { onClickSignOut } = props
 
   return (
@@ -13,13 +14,7 @@ export default (props) => {
       <h1>Make Your Day</h1>
       <h2> Welcome, {props.account.firstName}</h2>
       <div className='landing-btns'>
-        <Button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          add Focus
-        </Button>
+      <Focus account={props.account}/>
       </div>
       <h1>
         <DateTime></DateTime>

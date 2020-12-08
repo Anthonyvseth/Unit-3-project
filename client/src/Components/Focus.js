@@ -1,49 +1,39 @@
-import React, { useState } from "react";
-import TextInput from "./TextInput";
+import React, { useState, useEffect } from "react";
 import { __UpdateFocus } from "../services/AccountService";
 
 const Focus = (props) => {
-  const [focusValue, setFocusValue] = useState("");
+  console.log('focus props:', props.account)
+  const [focusValue, setFocusValue] = useState(null);
 
-  //   const focusField = (e) => {
-  //     e.preventDefault();
-  //     setFocusValue(e.target.value);
-  //     console.log("Focus:", focusValue);
-  //   };
+  useEffect(()=>{
+    console.log(`HIT FocusUE:`)
+    if (focusValue === null) {
+      setFocusValue(props.account.focus)
+    }
+  })
 
   const handleSubmit = async (e) => {
-    console.log("MZ HIT - Focus.HandleSubmit:", e.target.value);
     e.preventDefault();
+    console.log("MZ HIT - Focus.HandleSubmit:", e.target.value);
     try {
       //   const newFocus = { focus: focusValue };
-      const updatedFocus = await __UpdateFocus(focusValue);
+      console.log('focusValue:',focusValue)
+      const sentValues = {focus: focusValue}
+      const updatedFocus = await __UpdateFocus(sentValues);
       console.log("Focus updated:", updatedFocus);
     } catch (error) {
       throw error;
     }
   };
 
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
+    e.preventDefault();
     console.log("MZ HIT Focus.handleChange:", e.target.value);
-    e.preventDefault();
-    try {
-      const updatedFocus = await __UpdateFocus(e.targetValue);
-      console.log("MZ within handleChange; Focus updated:", updatedFocus);
-      setFocusValue(updatedFocus);
-    } catch (error) {
-      throw error;
-    }
-  };
-
-  const handleClick = (e) => {
-    console.log("MZ HIT Focus.handleClick:", e.target.value);
-    //this is what is firing with either an enter keystroke or click
-    e.preventDefault();
-    setFocusValue(e.target.value);
+    setFocusValue(e.target.value)   
   };
 
   const clearFocus = (e) => {
-    setFocusValue('')
+   console.log(e.target.value)
   }
 
   if (props.account === null || props.account === undefined) {
@@ -51,13 +41,14 @@ const Focus = (props) => {
   } else if (props.account.focus !== 'NULL' || props.account.focus !== "") {
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
-          <TextInput
+          <input
+            type='text'
             name="focus"
-            value={props.account.focus}
+            value={focusValue}
             placeholder="Focus for today?"
-            onChange={(e) => handleChange(e)}
+            onChange={handleChange}
           />
-          <button onClick={(e) => handleClick(e)}>Add</button>
+          <button>Add</button>
         </form>
     )
   } else {
