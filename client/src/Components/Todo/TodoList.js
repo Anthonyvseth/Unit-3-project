@@ -1,27 +1,22 @@
-import React, { useState } from 'react';
-import TodoForm from './TodoForm';
-// import Todo.js as a subcomponent
+import React from 'react';
+import Todo from './Todo';
 
-import {__GetTodos} from '../../services/TodoService'
+export default (props) => {
+  const { account } = props
+  const { todos } = props.account
 
-function TodoList(props) {
- 
-// get the todos to display
-
-// retrieve todolist from props
-
-// render new todo component
-
-return (
-  <>
-      <h1>What's the Plan for Today?</h1>
-        {/* // iterate through todolist using map and return a ToDo subcomponent */}
-      <TodoForm 
-      />
-    </>
-  );
-    
- 
+  if (account !== null && account !== undefined) {
+    return (
+      <div>
+        {todos.map((todo, index) => {
+          return (
+            <Todo todo={todo} key={index}/>
+          )
+        })
+        }
+      </div>
+    )
+  } else {
+    return null
+  }
 }
-
-export default TodoList;
