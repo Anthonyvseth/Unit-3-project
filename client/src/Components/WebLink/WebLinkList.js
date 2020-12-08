@@ -1,34 +1,23 @@
-import React, { useState } from 'react';
-import Links from './Link';
-import AddLink from './AddLink';
+import React from 'react';
+import WebLink from './WebLink';
 
-const WebLinkList = () => {
-  const [links, manageLinks] = useState([]);
-  const [newLink, setLink] = useState('');
+const WebLinkList = (props) => {
+  // console.log('listlink: ', props.account.weblinks);
+  // destructed weblinks from props for mapping access and passing for WebLink
+  const { weblinks } = props.account;
+  console.log('webLLL: ', weblinks);
 
-  const addLink = () => {
-    let myNewLink = [...links, newLink];
-    manageLinks(myNewLink);
-    setLink('');
-  };
-
-  const handleChange = (event) => {
-    setLink(event.target.value);
-  };
-
-  const deleteLink = (index) => {
-    const linkArr = [...links];
-    linkArr.splice(index, 1);
-    console.log(links);
-    manageLinks(linkArr);
-  };
-
-  return (
-    <div className='links'>
-      <AddLink handleChange={handleChange} addLink={addLink} value={newLink} />
-      <Links links={links} deleteLink={deleteLink} />
-    </div>
-  );
+  if (weblinks !== null && weblinks !== undefined) {
+    return (
+      <div>
+        {weblinks.map((weblink, index) => (
+          <WebLink weblinks={weblink} key={index} />
+        ))}
+      </div>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default WebLinkList;

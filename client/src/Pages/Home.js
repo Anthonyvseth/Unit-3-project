@@ -3,7 +3,7 @@ import Button from '../components/Button';
 import DateTime from '../components/DateTime';
 import SignOut from '../components/SignOut';
 import TodoList from '../components/Todo/TodoList';
-import WebLinkList from '../components/WebLink/WebLinkList';
+import WebLinks from '../components/WebLink/WebLinks';
 
 export default (props) => {
   console.log('home props: ', props.account);
@@ -27,7 +27,8 @@ export default (props) => {
       </h1>
       <div>
         <h1>
-          <WebLinkList weblink={props.account} />
+          <WebLinks {...props} />
+          {/* {console.log('home weblink props: ', props.account)} */}
         </h1>
       </div>
       <div>
