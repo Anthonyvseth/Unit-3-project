@@ -1,4 +1,5 @@
 const { Account, Todo, Weblink } = require('../models')
+const { getCurrentWeather } = require('./OpenWeather')
 
 const getAll = async (req, res) => {
   try {
@@ -12,13 +13,14 @@ const getAll = async (req, res) => {
 const getOne = async (req, res) => {
   const entityId = req.params.id
   try {
-    const entity = await Account.findByPk(entityId,{
+    const entity = await Account.findByPk(entityId, {
       include: [
         {
           all: true,
           nested: true
-         }
-      ]  })
+        }
+      ]
+    })
     res.send(entity)
   } catch (error) {
     throw error
@@ -79,19 +81,19 @@ const signIn = async (req, res, next) => {
         email: accountEmail,
         password: accountPassword
       },
-    include: [
-      {
-        model: Todo,
-        as: 'todos',
-       }
-    ]}
+      include: [
+        {
+          model: Todo,
+          as: 'todos',
+        }
+      ]
+    }
     )
     res.send(account)
   } catch (error) {
     console.log(error)
     return false
   }
-  // response.status(401).send({ msg: 'Unauthorized' })
 }
 
 const createTodo = async (req, res) => {
@@ -123,6 +125,30 @@ const createWeblink = async (req, res) => {
   }
 }
 
+const getWeather = async (req, res) => {
+  console.log('HIT getWeather')
+  const account = await getAccount(req.params.id)
+
+  console.log('getWeather Zip: ', account)
+  try {
+    const weather = await getCurrentWeather(account.zipCode)
+    console.log('Weather: ', weather)
+    res.send(weather)
+  } catch (error) {
+    throw error
+  }
+}
+
+const getAccount = async (accountId) => {
+  try {
+    const account = await Account.findByPk(accountId)
+    return account
+  } catch (error) {
+    throw error
+  }
+}
+
+
 module.exports = {
   getAll,
   getOne,
@@ -131,5 +157,6 @@ module.exports = {
   deleteOne,
   signIn,
   createTodo,
-  createWeblink
+  createWeblink,
+  getWeather
 }
