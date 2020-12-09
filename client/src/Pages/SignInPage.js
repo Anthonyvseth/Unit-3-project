@@ -3,6 +3,7 @@ import TextInput from '../components/TextInput';
 import { __LoginUser } from '../services/AccountService';
 
 const SignInPage = (props) => {
+  const { setAccount } = props
   const [loginValue, setLoginValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [formError, setFormError] = useState(false);
@@ -24,7 +25,7 @@ const SignInPage = (props) => {
       const userData = { email: loginValue, password: passwordValue };
       const loginResponse = await __LoginUser(userData);
       console.log('Login Response: ', loginResponse);
-      props.setAccount(loginResponse)
+      setAccount(loginResponse)
       props.history.push('/home');
       // props.toggleAuthenticated(true, loginData.user, () => this.props.history.push('/list')
       // )
