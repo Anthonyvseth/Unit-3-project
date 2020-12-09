@@ -1,22 +1,31 @@
-// Basic react imports
+import React from 'react'
+import Button from '../Button'
+import { __DeleteTodo } from '../../services/TodoService'
 // Import ToDo Update Service
 // Import Todo Delete Service
 
-//import your styles
+export default (props) => {
+    const { todo } = props
+    console.log("TODO props: ", props)
 
+    const deleteTodo = async (e) => {
+        console.log("HIT deleteTodo: ", todo)
+        try{
+            await __DeleteTodo(todo.id)
+            props.history.push('/home')
+        } catch(error) {
+            console.log(error)
+        }
+    }
 
-//declare your function component
-
-// function to mark todo as complete
-// call TodoService with todo ID and update complete: true (directly access ID from props)
-
-// function to delete todo
-// call ToDo Delete Service with todo ID (directly access ID from props)
-
-//return statement that includes all html to be rendered
-// including:
-//  - description
-//  - checkbox to marks as complete, when checked calls function above
-//  - icon to mark deleted, when clicked calls function above
-// use either html ID or name fields to hold the todo item ID, which
-
+    if (todo !== null && todo !== undefined) {
+        return (
+            <div>
+                {todo.description}
+                <button onClick={(e) => deleteTodo(e) }>Delete</button>
+            </div>
+        )
+    } else {
+        return null
+    }
+}

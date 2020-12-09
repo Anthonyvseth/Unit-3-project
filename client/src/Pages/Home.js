@@ -2,13 +2,13 @@ import React from 'react';
 import Button from '../components/Button';
 import DateTime from '../components/DateTime';
 import SignOut from '../components/SignOut'
-import TodoList from '../components/Todo/TodoList'
-import Weather from '../components/Weather'
+import Todos from '../components/Todo/Todos'
 import Focus from '../components/Focus'
+import Weather from '../components/Weather'
 
 export default (props) => {
   //console.log('home props: ', props.account);
-  const { onClickSignOut } = props
+  const { account, onClickSignOut } = props
 
   return (
     <div className='landing-container'>
@@ -21,8 +21,8 @@ export default (props) => {
         <DateTime></DateTime>
       </h1>
       <div>
-        <TodoList // we are going to need to send todolist as props
-        account={props.account}
+        <Todos // we are going to need to send todolist as props
+        account={account}
         />
         <SignOut onClick={onClickSignOut}/>
       </div>
