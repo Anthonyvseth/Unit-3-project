@@ -5,14 +5,14 @@ import { __DeleteTodo } from '../../services/TodoService'
 // Import Todo Delete Service
 
 export default (props) => {
-    const { todo } = props
+    const { todo, setNeedsRefresh } = props
     console.log("TODO props: ", props)
 
     const deleteTodo = async (e) => {
         console.log("HIT deleteTodo: ", todo)
         try{
             await __DeleteTodo(todo.id)
-            props.history.push('/home')
+            setNeedsRefresh(true)
         } catch(error) {
             console.log(error)
         }
