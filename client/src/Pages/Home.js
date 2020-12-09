@@ -2,40 +2,36 @@ import React from 'react';
 import Button from '../components/Button';
 import DateTime from '../components/DateTime';
 import SignOut from '../components/SignOut';
-import TodoList from '../components/Todo/TodoList';
 import WebLinks from '../components/WebLink/WebLinks';
+import Todos from '../components/Todo/Todos';
+import Focus from '../components/Focus';
+import Weather from '../components/Weather';
 
 export default (props) => {
-  console.log('home props: ', props.account);
-  const { onClickSignOut } = props;
+  //console.log('home props: ', props.account);
+  const { account, onClickSignOut } = props;
 
   return (
     <div className='landing-container'>
       <h1>Make Your Day</h1>
       <h2> Welcome, {props.account.firstName}</h2>
       <div className='landing-btns'>
-        <Button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          add Focus
-        </Button>
+        <Focus account={props.account} />
       </div>
       <h1>
         <DateTime></DateTime>
       </h1>
       <div>
-        <h1>
-          <WebLinks {...props} />
-          {/* {console.log('home weblink props: ', props.account)} */}
-        </h1>
+        <WebLinks {...props} />
       </div>
       <div>
-        <TodoList // we are going to need to send todolist as props
-          todos={props.account}
+        <Todos // we are going to need to send todolist as props
+          account={account}
         />
         <SignOut onClick={onClickSignOut} />
+      </div>
+      <div>
+        <Weather />
       </div>
     </div>
   );
