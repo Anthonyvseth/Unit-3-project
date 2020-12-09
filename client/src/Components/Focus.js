@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { __UpdateFocus } from "../services/AccountService";
 
 const Focus = (props) => {
+  const { setNeedsRefresh } = props
   const [focusValue, setFocusValue] = useState(null);
 
   useEffect(()=>{
@@ -15,6 +16,7 @@ const Focus = (props) => {
     try {
       const sentValues = {focus: focusValue}
       const updatedFocus = await __UpdateFocus(sentValues);
+      setNeedsRefresh(true)
     } catch (error) {
       throw error;
     }
@@ -25,13 +27,21 @@ const Focus = (props) => {
     setFocusValue(e.target.value)   
   };
 
-  const clearFocus = (e) => {
+  const clearFocus = async (e) => {
+    e.preventDefault()
+    try {
+      const updatedFocus = await __UpdateFocus({focus: ''})
+      setNeedsRefresh(true)
+    } catch (error) {
+      throw error;
+    }
   }
 
   if (props.account === null || props.account === undefined) {
     return null;
   } else if (props.account.focus !== 'NULL' || props.account.focus !== "") {
     return (
+          <div>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input
             type='text'
@@ -42,6 +52,8 @@ const Focus = (props) => {
           />
           <button>Add</button>
         </form>
+        <button onClick={(e)=>clearFocus(e)}>Clear</button>
+        </div>
     )
   } else {
       return (
