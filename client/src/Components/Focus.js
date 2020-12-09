@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { __UpdateFocus } from "../services/AccountService";
 
 const Focus = (props) => {
-  console.log('focus props:', props.account)
   const [focusValue, setFocusValue] = useState(null);
 
   useEffect(()=>{
-    console.log(`HIT FocusUE:`)
     if (focusValue === null) {
       setFocusValue(props.account.focus)
     }
@@ -14,13 +12,9 @@ const Focus = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("MZ HIT - Focus.HandleSubmit:", e.target.value);
     try {
-      //   const newFocus = { focus: focusValue };
-      console.log('focusValue:',focusValue)
       const sentValues = {focus: focusValue}
       const updatedFocus = await __UpdateFocus(sentValues);
-      console.log("Focus updated:", updatedFocus);
     } catch (error) {
       throw error;
     }
@@ -28,12 +22,10 @@ const Focus = (props) => {
 
   const handleChange = (e) => {
     e.preventDefault();
-    console.log("MZ HIT Focus.handleChange:", e.target.value);
     setFocusValue(e.target.value)   
   };
 
   const clearFocus = (e) => {
-   console.log(e.target.value)
   }
 
   if (props.account === null || props.account === undefined) {
