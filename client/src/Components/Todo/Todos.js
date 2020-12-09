@@ -4,16 +4,21 @@ import TodoForm from './TodoForm';
 import TodoList from './TodoList'
 
 export default (props) => {
-    const { account } = props
+    const { account, setNeedsRefresh } = props
 
     return (
         <div>
             <div>
                 <div>
-                    <TodoList account={account}/>
+                    <TodoList
+                     account={account}
+                     setNeedsRefresh={setNeedsRefresh}/>
                 </div>
                 <div>
-                    <TodoForm account={account} />
+                    <TodoForm
+                     {...props}
+                      account={account}
+                      setNeedsRefresh={setNeedsRefresh} />
                 </div>
                 <br></br>
             </div>

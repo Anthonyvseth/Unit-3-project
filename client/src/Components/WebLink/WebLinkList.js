@@ -2,6 +2,7 @@ import React from 'react';
 import WebLink from './WebLink';
 
 const WebLinkList = (props) => {
+  const { setNeedsRefresh } = props
   // console.log('listlink: ', props.account.weblinks);
   // destructed weblinks from props for mapping access and passing for WebLink
   const { weblinks } = props.account;
@@ -11,7 +12,10 @@ const WebLinkList = (props) => {
     return (
       <div>
         {weblinks.map((weblink, index) => (
-          <WebLink weblinks={weblink} key={index} />
+          <WebLink
+            weblinks={weblink}
+            key={index}
+            setNeedsRefresh={setNeedsRefresh} />
         ))}
       </div>
     );

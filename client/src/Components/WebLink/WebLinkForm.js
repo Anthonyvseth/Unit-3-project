@@ -6,6 +6,7 @@ import { __CreateWeblink } from '../../services/WeblinkService';
 
 //declare your function component
 const WebLinkForm = (props) => {
+  const { setNeedsRefresh } = props
   const [newLink, setLink] = useState('');
 
   const [formError, setFormError] = useState(false);
@@ -29,7 +30,7 @@ const WebLinkForm = (props) => {
     };
     try {
       const addLink = await __CreateWeblink(sendLink);
-      props.history.push('/home');
+      setNeedsRefresh(true)
     } catch (error) {
       setFormError(true);
     }
