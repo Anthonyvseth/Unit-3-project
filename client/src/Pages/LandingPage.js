@@ -14,7 +14,7 @@ const LandingPage = () => {
         <video src='/videos/video-1.mp4' autoPlay loop muted />
 
             <h1>Make Your Day</h1>
-            <p>lorem ipsum dsfj woeiaslkdj skdf asdkjfasdlkjsdjf kaslf</p>
+            <p></p>
             <div className="landing-btns">
             <NavLink 
             to='/register'
