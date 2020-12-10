@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
 import TextInput from '../components/TextInput';
+<<<<<<< HEAD
+import { __LoginUser } from '../services/AccountService';
+import Button from '../components/Button'
+=======
 import {__LoginUser} from '../services/AccountService';
+>>>>>>> a666e63c236a405722b16792d4601ae820df7d63
 
 const SignInPage = (props) => {
     const {setAccount} = props
@@ -34,6 +39,44 @@ const SignInPage = (props) => {
         }
     };
 
+<<<<<<< HEAD
+  return (
+    <div>
+      
+      <form className='form-content-right' onSubmit={(e) => handleSubmit(e)}>
+        <h1>Sign In</h1>
+        <div className='form-inputs'>
+        
+          <label htmlFor='email' className='form-label'>
+            Email
+            <TextInput
+              className='form-input'
+              name='email'
+              type='email'
+              onChange={emailField}
+            />
+          </label>
+        </div>
+        <div className='form-inputs'>
+          <label htmlFor='password' className='form-label'>
+            Password
+            <TextInput
+              className='form-input'
+              name='password'
+              type='password'
+              onChange={passwordField}
+            />
+          </label>
+        </div>
+        <div>
+        <Button
+            className='btns'
+            buttonStyle='btn--outline'
+            buttonSize='btn--large'
+          >
+            Submit
+          </Button>
+=======
     return (
         <div>
             <h1>Sign in</h1>
@@ -72,6 +115,7 @@ const SignInPage = (props) => {
                     </button>
                 </div>
             </form>
+>>>>>>> a666e63c236a405722b16792d4601ae820df7d63
         </div>
     );
 };

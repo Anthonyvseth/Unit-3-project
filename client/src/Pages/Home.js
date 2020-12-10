@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from '../components/Button';
 import DateTime from '../components/DateTime';
 import SignOut from '../components/SignOut';
 import WebLinks from '../components/WebLink/WebLinks';
 import Todos from '../components/Todo/Todos';
 import Focus from '../components/Focus';
 import Weather from '../components/Weather';
+import '../styles/Home.css'
 
 export default (props) => {
   //console.log('home props: ', props.account);
@@ -14,7 +14,7 @@ export default (props) => {
   if (account !== null && account !== undefined) {
 
     return (
-      <div className='landing-container'>
+      <div className='Home-container'>
         <h1>Make Your Day</h1>
         <h2> Welcome, {props.account.firstName}</h2>
         <div className='landing-btns'>

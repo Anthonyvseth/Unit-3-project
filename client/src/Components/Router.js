@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Home from '../pages/Home';
 import LandingPage from '../pages/LandingPage';
 import SignUpPage from '../pages/SignUpPage';
 import SignInPage from '../pages/SignInPage';
-import ProtectedRoute from '../components/ProtectedRoute';
+import ProtectedRoute from '../components/ProtectedRoute'
 
 import { Switch, Route } from 'react-router-dom';
 import { __GetProfile } from '../services/AccountService';
