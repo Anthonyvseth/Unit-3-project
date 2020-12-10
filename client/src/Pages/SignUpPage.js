@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Button from '../components/Button';
 import TextInput from '../components/TextInput';
 import { __RegisterUser } from '../services/AccountService';
-import '../styles/Form.css';
+import '../styles/SignUp.css'
 
 const SignUpPage = (props) => {
   const [firstName, setFirstName] = useState('');
@@ -64,7 +64,7 @@ const SignUpPage = (props) => {
       <form className='form-content-right' onSubmit={(e) => handleSubmit(e)}>
         <h1>Sign Up</h1>
         <div className='form-inputs'>
-          <label htmlFor='firtName' className='form-label'>
+          <label htmlFor='firtName' >
             First Name
             <TextInput
               type='text'
@@ -75,7 +75,7 @@ const SignUpPage = (props) => {
           </label>
         </div>
         <div className='form-inputs'>
-          <label htmlFor='lastName' className='form-label'>
+          <label htmlFor='lastName' >
             Last Name
             <TextInput
               type='text'
