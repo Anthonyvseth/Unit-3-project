@@ -52,7 +52,7 @@
   display: flex;
   align-content: flex-end;
   margin-bottom: 0.5rem;
-  width: 80%;
+  width: 100%%;
   
 }
 
@@ -78,5 +78,5 @@ input {
   color: white;
   border: none;
   outline: none;
-  border-bottom: 3px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
