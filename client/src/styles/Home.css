@@ -23,3 +23,26 @@
     transform: scale(1.5);
     transition: all 0.3s ease;;
   }
+.home-page .left {
+  border-radius: 0 4em 4em 0;
+  position: relative;
+  display: flex;
+  box-shadow: 10px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.list-container-box{
+    display: -webkit-box;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.icon-favicon {
+  max-height: 16px;
+  max-width: 16px;
+}

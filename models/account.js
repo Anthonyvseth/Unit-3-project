@@ -1,41 +1,68 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const {Model} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Account extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      Account.hasMany(models.Todo, {
-        foreignKey: 'account_id',
-        as: 'todos',
-        onDelete: 'cascade',
-        onUpdate: 'cascade'
-      }),
-      Account.hasMany(models.Weblink, {
-        foreignKey: 'account_id',
-        as: 'weblinks',
-        onDelete: 'cascade',
-        onUpdate: 'cascade'
-      })
-    }
-  };
-  Account.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    zipCode: DataTypes.STRING,
-    focus: DataTypes.STRING,
-    focusExpiry: DataTypes.DATE
-  }, {
-    sequelize,
-    modelName: 'Account',
-    tableName: 'accounts'
-  });
-  return Account;
+    class Account extends Model {
+
+        static associate(models) {
+            Account.hasMany(models.Todo, {
+                foreignKey: 'account_id',
+                as: 'todos',
+                onDelete: 'cascade',
+                onUpdate: 'cascade'
+            }),
+                Account.hasMany(models.Weblink, {
+                    foreignKey: 'account_id',
+                    as: 'weblinks',
+                    onDelete: 'cascade',
+                    onUpdate: 'cascade'
+                })
+        }
+    };
+    Account.init({
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+        lastName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true,
+                notEmpty: true
+            }
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+        zipCode: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
+                len: [5, 11]
+            }
+        },
+        focus: DataTypes.STRING,
+        focusExpiry: DataTypes.DATE
+    }, {
+        sequelize,
+        modelName: 'Account',
+        tableName: 'accounts'
+    });
+    return Account;
 };

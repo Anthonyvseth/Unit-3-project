@@ -34,7 +34,6 @@ export default () => {
                 <img src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x`+`.png`} alt='weather icon'/>               
             </div>
         )
-
     } else{
         return null
     }

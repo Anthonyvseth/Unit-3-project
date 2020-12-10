@@ -51,8 +51,8 @@ const SignUpPage = (props) => {
     console.log('formState: ', formState)
     try {
       const accountResponse = await __RegisterUser(formState);
-      props.setAccount(accountResponse)
       // console.log('Response - SignUp: ', signUpResponse);
+      props.setAccount(accountResponse)
       props.history.push('/home');
     } catch (error) {
       setFormError(true);
