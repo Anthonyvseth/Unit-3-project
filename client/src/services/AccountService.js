@@ -61,3 +61,23 @@ export const __UpdateFocus = async (userData) => {
     throw error
   }
 };
+
+export const __UpdateZip = async (userData) => {
+  const accountId = localStorage.getItem("account_id");
+  console.log(
+    "__UpdateZIP HIT, accountId:",
+    accountId,
+    `userData:`,
+    userData
+  );
+  try {
+    const updatedZipCode = await ApiClient.put(
+      `/accounts/${accountId}`,
+      userData
+    );
+    console.log(`updatedZipCode variable:`, updatedZipCode);
+    return updatedZipCode;
+  } catch (error) {
+    throw error;
+  }
+}

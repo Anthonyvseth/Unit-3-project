@@ -3,10 +3,16 @@ import { __GetWeather } from "../services/WeatherService";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { __UpdateZip } from "../services/AccountService";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
+import TextInput from '../components/TextInput'
 
-export default () => {
+export default (props) => {
   let [weatherData, setWeatherData] = useState(null);
-
+  
+  let [zipValue,setZipValue] = useState(null)
+  const { setNeedsRefresh } = props
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -28,6 +34,17 @@ export default () => {
       console.log(error);
     }
   };
+
+  const updateZipcode = async (e) => {
+      e.preventDefault()
+      try{
+          const sentValues = {zipcode: zipValue }
+          const updatedZip = await __UpdateZip(sentValues)
+          setNeedsRefresh(true)
+      }catch(error){
+          throw error
+      }
+  }
 
   
   const capitalizeString = (str) => {
@@ -54,6 +71,29 @@ export default () => {
                 alt="weather icon"
               />
               <p>Current {weatherData.name} Weather</p>
+              {/* <FontAwesomeIcon
+                className="fas fa-white"
+                icon={faLocationArrow}
+                onClick={
+                  <Modal show={show} onHide={handleClose} backdrop="static">
+                    <Modal.Header closeButton>
+                      <Modal.Title>
+                        Update Your Location
+                        <Modal.Body>
+                          <form onSubmit={(e) => updateZipcode(e)}>
+                            <input
+                              type="text"
+                              name="zipcode"
+                              value={zipValue}
+                              placeholder="Your Current Zipcode"
+                            />
+                          </form>
+                        </Modal.Body>
+                      </Modal.Title>
+                    </Modal.Header>
+                  </Modal>
+                }
+              /> */}
             </Button>
             <Modal
               show={show}
@@ -73,6 +113,35 @@ export default () => {
                     <h4>Real Temp: {weatherData.main.feels_like}°F</h4>
                     <h4>Humidity: {weatherData.main.humidity}%</h4>
                     <h4>Feels Like: {weatherData.main.temp}°F</h4>
+                    <Button variant='secondary' onClick={handleShow}>
+                      <FontAwesomeIcon
+                        className="fas fa-white"
+                        icon={faLocationArrow}
+                        onClick={()=>
+                          <Modal
+                            show={show}
+                            onHide={handleClose}
+                            backdrop="static"
+                          >
+                            <Modal.Header closeButton>
+                              <Modal.Title>
+                                Update Your Location
+                                <Modal.Body>
+                                  <form onSubmit={(e) => updateZipcode(e)}>
+                                    <input
+                                      type="text"
+                                      name="zipcode"
+                                      value={zipValue}
+                                      placeholder="Your Current Zipcode"
+                                    />
+                                  </form>
+                                </Modal.Body>
+                              </Modal.Title>
+                            </Modal.Header>
+                          </Modal>
+                        }
+                      />
+                    </Button>
                   </Modal.Body>
                 </Modal.Title>
               </Modal.Header>
