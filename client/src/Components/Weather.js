@@ -28,38 +28,57 @@ export default () => {
       console.log(error);
     }
   };
-  if (weatherData !== null) {
-    return (
-      <div>
-        <Button variant="secondary" onClick={handleShow}>
-          <img
-            src={
-              `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x` +
-              `.png`
-            }
-            alt="weather icon"
-          />
-          <p>{weatherData.name} Forecast</p>
-        </Button>
-        <Modal
-          show={show}
-          onHide={handleClose}
-          backdrop="static"
-          keyboard={false}
-          closeLabel={false}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>
-              <Modal.Body>
-                <h2>{weatherData.weather[0].description}</h2>
-                <h2>{weatherData.main.temp}°F</h2>
-              </Modal.Body>
-            </Modal.Title>
-          </Modal.Header>
-        </Modal>
-        {/* {console.log("Weather: ", weatherData.main.temp)} */}
-      </div>
-    );
+
+  
+  const capitalizeString = (str) => {
+      str = `${weatherData.weather[0].description}`
+      let arr = str.split(' ')
+      arr.map((word, index, array) => {
+          array[index] = array[index][0].toUpperCase() + array[index].slice(1)
+          return array[index]
+      })
+      console.log(arr)
+      return arr.join(' ')
+}
+    
+    if (weatherData !== null) {
+        return (
+          <div>
+            {console.log(weatherData.weather[0].description)}
+            <Button variant="secondary" onClick={handleShow}>
+              <img
+                src={
+                  `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x` +
+                  `.png`
+                }
+                alt="weather icon"
+              />
+              <p>Current {weatherData.name} Weather</p>
+            </Button>
+            <Modal
+              show={show}
+              onHide={handleClose}
+              backdrop="static"
+              keyboard={false}
+              closeLabel={false}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>
+                  <Modal.Body>
+                    <h4>
+                      {capitalizeString(
+                        `${weatherData.weather[0].description}`
+                      )}
+                    </h4>
+                    <h4>Real Temp: {weatherData.main.feels_like}°F</h4>
+                    <h4>Humidity: {weatherData.main.humidity}%</h4>
+                    <h4>Feels Like: {weatherData.main.temp}°F</h4>
+                  </Modal.Body>
+                </Modal.Title>
+              </Modal.Header>
+            </Modal>
+          </div>
+        );
   } else {
     return null;
   }
