@@ -1,3 +1,4 @@
+import '../styles/Form.css'
 
 const TextInput = (props) =>
 props.fieldType === 'textfield' ? (

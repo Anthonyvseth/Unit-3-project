@@ -70,7 +70,6 @@ const SignUpPage = (props) => {
               type='text'
               name='firstName'
               className='form-input'
-              placeholder='First Name'
               onChange={formFieldChange}
             />
           </label>
@@ -82,7 +81,6 @@ const SignUpPage = (props) => {
               type='text'
               name='lastName'
               className='form-input'
-              placeholder='Last Name'
               onChange={formFieldChange}
             />
           </label>
@@ -94,7 +92,6 @@ const SignUpPage = (props) => {
               type='text'
               name='email'
               className='form-input'
-              placeholder='Email'
               onChange={formFieldChange}
             />
           </label>
@@ -106,7 +103,6 @@ const SignUpPage = (props) => {
               type='text'
               name='password'
               className='form-input'
-              placeholder='Password'
               onChange={formFieldChange}
             />
           </label>
@@ -118,7 +114,6 @@ const SignUpPage = (props) => {
               type='text'
               name='zipcode'
               className='form-input'
-              placeholder='Zipcode'
               onChange={formFieldChange}
             />
           </label>
@@ -132,12 +127,13 @@ const SignUpPage = (props) => {
             Submit
           </Button>
         </div>
-      </form>
-      <div>
+        <div>
         <NavLink to='/signin' activeclassName='nav-active'>
-          <h2>Existing user go to login</h2>
+          <h2>Login Here</h2>
         </NavLink>
       </div>
+      </form>
+      
     </div>
   );
 };
