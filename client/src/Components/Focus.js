@@ -40,11 +40,13 @@ const Focus = (props) => {
     }
   };
 
+  // is this if statement still necessary following changes to signin/signup?
   if (props.account === null || props.account === undefined) {
     return null;
   } else if (props.account.focus === "NULL" || props.account.focus === "") {
     return (
       <div>
+        <span>Focus</span>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input
             type="text"
@@ -57,18 +59,13 @@ const Focus = (props) => {
           className="fas fa-white"
           icon={faPlusSquare}
           />
-          <FontAwesomeIcon
-            className="fas fa-white"
-            icon={faCheckSquare}
-            onClick={clearFocus}
-            />
           </form>
       </div>
     );
   } else {
     return (
       <div>
-        <h3>Your current focus:</h3>
+        <h3>Focus on:</h3>
         <p>
           {props.account.focus}
           <FontAwesomeIcon

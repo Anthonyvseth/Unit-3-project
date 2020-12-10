@@ -51,13 +51,11 @@ const WebLinkForm = (props) => {
           required
           onChange={handleChange}
         ></input>
-        {/* <button onClick={handleSubmit} className="link-button"> */}
           <FontAwesomeIcon
             className="fas fa-white"
             icon={faPlusSquare}
             onClick={handleSubmit}
           />
-        {/* </button> */}
       </form>
     </div>
   );
