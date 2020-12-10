@@ -16,9 +16,6 @@ export default (props) => {
     return (
       <div className='Home-container'>
         <h1>Make Your Day</h1>
-        <div>
-          <Weather />
-        </div>
         <h2> Welcome, {props.account.firstName}</h2>
         <div className='landing-btns'>
           <Focus 
@@ -40,6 +37,9 @@ export default (props) => {
             setNeedsRefresh={setNeedsRefresh}
           />
           <SignOut onClick={onClickSignOut} />
+        </div>
+        <div>
+          <Weather />
         </div>
       </div>
     )
