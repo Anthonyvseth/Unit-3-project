@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import TextInput from '../components/TextInput';
-
 import { __LoginUser } from '../services/AccountService';
 import Button from '../components/Button'
+import '../styles/SignUp.css'
 
 
 
@@ -42,8 +42,8 @@ const SignInPage = (props) => {
 
     return (
         <div>
-            <h1>Sign in</h1>
             <form className='form-content-right' onSubmit={(e) => handleSubmit(e)}>
+            <h1>Sign In</h1>
                 <div className='form-inputs'>
                     <label htmlFor='email' className='form-label'>
                         Email
