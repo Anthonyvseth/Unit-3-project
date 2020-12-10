@@ -1,7 +1,8 @@
 // Basic react imports
-import React, { useState } from 'react';
-import { __CreateWeblink } from '../../services/WeblinkService';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+import { __CreateWeblink } from "../../services/WeblinkService";
+import { faPlusSquare } from "@fortawesome/free-solid-svg-icons"
 //import your styles
 
 //declare your function component
@@ -15,9 +16,9 @@ const WebLinkForm = (props) => {
   const handleChange = (e) => {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
-    console.log('HIT formFieldChange: ', fieldName, fieldValue);
+    console.log("HIT formFieldChange: ", fieldName, fieldValue);
     switch (fieldName) {
-      case 'url':
+      case "url":
         setLink(fieldValue);
     }
   };
@@ -38,21 +39,22 @@ const WebLinkForm = (props) => {
 
   return (
     <div>
-      <form onSubmit={(e) => handleSubmit(e)} className='todo-form'>
+      <form onSubmit={(e) => handleSubmit(e)} className="todo-form">
         <input
-          type='text'
-          id='url'
-          name='url'
+          type="text"
+          id="url"
+          name="url"
           value={newLink}
-          placeholder='https://example.com'
-          // pattern='https://.*'
-          size='30'
+          placeholder="https://example.com"
+          size="30"
           required
           onChange={handleChange}
         ></input>
-        {/* <button onClick={handleSubmit} className='link-button'>
-          +
-        </button> */}
+          <FontAwesomeIcon
+            className="fas fa-white"
+            icon={faPlusSquare}
+            onClick={handleSubmit}
+          />
       </form>
     </div>
   );

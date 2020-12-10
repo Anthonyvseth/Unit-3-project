@@ -1,6 +1,9 @@
 import React from 'react'
 import Button from '../Button'
 import { __DeleteTodo } from '../../services/TodoService'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+
 // Import ToDo Update Service
 // Import Todo Delete Service
 
@@ -22,7 +25,11 @@ export default (props) => {
         return (
             <div>
                 {todo.description}
-                <button onClick={(e) => deleteTodo(e) }>Delete</button>
+                <FontAwesomeIcon 
+                className="fas fa-white"
+                icon={faTimesCircle}
+                onClick={(e) => deleteTodo(e)}
+                />
             </div>
         )
     } else {

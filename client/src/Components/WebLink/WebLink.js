@@ -1,6 +1,8 @@
 import React from 'react';
 // Import delete service
 import { __DeleteWeblink } from '../../services/WeblinkService';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const WebLink = (props) => {
   // destructed weblinks from props for url access
@@ -17,10 +19,17 @@ const WebLink = (props) => {
   return (
     <div>
       <a className="webLink" href={`https://${weblinks.url}`}>
-        <img class="icon-favicon" src={`https://icons.duckduckgo.com/ip2/${weblinks.url}.ico`}/>
+        <img
+          class="icon-favicon"
+          src={`https://icons.duckduckgo.com/ip2/${weblinks.url}.ico`}
+        />
         {weblinks.url}
       </a>
-      <button onClick={(e) => handleDelete(e)}>x</button>
+      <FontAwesomeIcon
+        className="fas fa-white"
+        icon={faTimesCircle}
+        onClick={(e) => handleDelete(e)}
+      />
     </div>
   );
 };
