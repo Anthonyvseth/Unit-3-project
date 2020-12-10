@@ -8,7 +8,7 @@ import { faPlusSquare } from "@fortawesome/free-solid-svg-icons"
 //declare your function component
 const WebLinkForm = (props) => {
   const { setNeedsRefresh } = props;
-  const [newLink, setLink] = useState("");
+  const [newLink, setLink] = useState('');
 
   const [formError, setFormError] = useState(false);
 
@@ -46,7 +46,6 @@ const WebLinkForm = (props) => {
           name="url"
           value={newLink}
           placeholder="https://example.com"
-          pattern="https://.*"
           size="30"
           required
           onChange={handleChange}

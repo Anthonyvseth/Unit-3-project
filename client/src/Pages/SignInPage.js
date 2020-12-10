@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
 import TextInput from '../components/TextInput';
-import {__LoginUser} from '../services/AccountService';
+
+import { __LoginUser } from '../services/AccountService';
+import Button from '../components/Button'
+
+
+
 
 const SignInPage = (props) => {
     const {setAccount} = props
@@ -34,6 +39,7 @@ const SignInPage = (props) => {
         }
     };
 
+    
     return (
         <div>
             <h1>Sign in</h1>
@@ -72,6 +78,7 @@ const SignInPage = (props) => {
                     </button>
                 </div>
             </form>
+
         </div>
     );
 };

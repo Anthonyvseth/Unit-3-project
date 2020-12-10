@@ -10,4 +10,5 @@ export const __GetWeather = async () => {
   } catch (error) {
     throw error
   }
+  
 }
