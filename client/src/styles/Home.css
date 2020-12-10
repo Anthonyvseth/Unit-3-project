@@ -42,6 +42,13 @@ justify-content: space-between;
 }
 
 .icon-favicon {
-max-height: 16px;
-max-width: 16px;
+  max-height: 16px;
+  max-width: 16px;
+  padding: 5px;
+}
+
+.fas .fa-white{
+  color: white;
+  opacity: .5;
+  padding: 10px;
 }
