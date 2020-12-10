@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
@@ -45,31 +42,6 @@ export default (props) => {
             </Modal.Body>
           </Modal>
         </>
-        {/* <div className='mb2'>
-          <DropdownButton
-            variant='secondary'
-            id='dropdown-item-button'
-            title='Todos'
-            drop='left'
-          >
-            <Dropdown>
-              <div>
-                <TodoForm
-                  {...props}
-                  account={account}
-                  setNeedsRefresh={setNeedsRefresh}
-                />
-              </div>
-            </Dropdown>
-            <Dropdown.Item as='button'>
-              <div>
-                <TodoList account={account} setNeedsRefresh={setNeedsRefresh} />
-              </div>
-            </Dropdown.Item>
-          </DropdownButton>
-        </div>
-
-        <br></br> */}
       </div>
     </div>
   );
