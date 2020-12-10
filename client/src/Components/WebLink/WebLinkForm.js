@@ -6,7 +6,7 @@ import { __CreateWeblink } from '../../services/WeblinkService';
 
 //declare your function component
 const WebLinkForm = (props) => {
-  const { setNeedsRefresh } = props
+  const { setNeedsRefresh } = props;
   const [newLink, setLink] = useState('');
 
   const [formError, setFormError] = useState(false);
@@ -30,7 +30,7 @@ const WebLinkForm = (props) => {
     };
     try {
       const addLink = await __CreateWeblink(sendLink);
-      setNeedsRefresh(true)
+      setNeedsRefresh(true);
     } catch (error) {
       setFormError(true);
     }
@@ -45,14 +45,14 @@ const WebLinkForm = (props) => {
           name='url'
           value={newLink}
           placeholder='https://example.com'
-          pattern='https://.*'
+          // pattern='https://.*'
           size='30'
           required
           onChange={handleChange}
         ></input>
-        <button onClick={handleSubmit} className='link-button'>
+        {/* <button onClick={handleSubmit} className='link-button'>
           +
-        </button>
+        </button> */}
       </form>
     </div>
   );
