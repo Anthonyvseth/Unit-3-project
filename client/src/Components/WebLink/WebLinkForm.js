@@ -1,13 +1,14 @@
 // Basic react imports
-import React, { useState } from 'react';
-import { __CreateWeblink } from '../../services/WeblinkService';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+import { __CreateWeblink } from "../../services/WeblinkService";
+import { faPlusSquare } from "@fortawesome/free-solid-svg-icons"
 //import your styles
 
 //declare your function component
 const WebLinkForm = (props) => {
-  const { setNeedsRefresh } = props
-  const [newLink, setLink] = useState('');
+  const { setNeedsRefresh } = props;
+  const [newLink, setLink] = useState("");
 
   const [formError, setFormError] = useState(false);
 
@@ -15,9 +16,9 @@ const WebLinkForm = (props) => {
   const handleChange = (e) => {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
-    console.log('HIT formFieldChange: ', fieldName, fieldValue);
+    console.log("HIT formFieldChange: ", fieldName, fieldValue);
     switch (fieldName) {
-      case 'url':
+      case "url":
         setLink(fieldValue);
     }
   };
@@ -30,7 +31,7 @@ const WebLinkForm = (props) => {
     };
     try {
       const addLink = await __CreateWeblink(sendLink);
-      setNeedsRefresh(true)
+      setNeedsRefresh(true);
     } catch (error) {
       setFormError(true);
     }
@@ -38,21 +39,25 @@ const WebLinkForm = (props) => {
 
   return (
     <div>
-      <form onSubmit={(e) => handleSubmit(e)} className='todo-form'>
+      <form onSubmit={(e) => handleSubmit(e)} className="todo-form">
         <input
-          type='text'
-          id='url'
-          name='url'
+          type="text"
+          id="url"
+          name="url"
           value={newLink}
-          placeholder='https://example.com'
-          pattern='https://.*'
-          size='30'
+          placeholder="https://example.com"
+          pattern="https://.*"
+          size="30"
           required
           onChange={handleChange}
         ></input>
-        <button onClick={handleSubmit} className='link-button'>
-          +
-        </button>
+        {/* <button onClick={handleSubmit} className="link-button"> */}
+          <FontAwesomeIcon
+            className="fas fa-white"
+            icon={faPlusSquare}
+            onClick={handleSubmit}
+          />
+        {/* </button> */}
       </form>
     </div>
   );
