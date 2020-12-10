@@ -28,10 +28,12 @@ export default () => {
         return (
             <div>
                 {console.log('Weather: ', weatherData.main.temp)}
-                <h2>{weatherData.main.temp}</h2>
+                <h2>Current weather in {weatherData.name}:</h2>
+                <h2>{weatherData.main.temp}°F</h2>
+                <h2>{weatherData.weather[0].description}</h2>
+                <img src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x`+`.png`} alt='weather icon'/>               
             </div>
         )
-
     } else{
         return null
     }
