@@ -20,4 +20,12 @@
 .icon-favicon {
   max-height: 16px;
   max-width: 16px;
+  padding: 5px;
+}
+
+.fas .fa-white{
+  color: white;
+  size: 10px;
+  opacity: .5;
+  padding: 10px;
 }
