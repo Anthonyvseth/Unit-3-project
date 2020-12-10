@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import TextInput from '../components/TextInput';
 import { __LoginUser } from '../services/AccountService';
+import Button from '../components/Button'
 
 const SignInPage = (props) => {
+  const { setAccount } = props
   const [loginValue, setLoginValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [formError, setFormError] = useState(false);
@@ -24,6 +26,7 @@ const SignInPage = (props) => {
       const userData = { email: loginValue, password: passwordValue };
       const loginResponse = await __LoginUser(userData);
       console.log('Login Response: ', loginResponse);
+      setAccount(loginResponse)
       props.history.push('/home');
       // props.toggleAuthenticated(true, loginData.user, () => this.props.history.push('/list')
       // )
@@ -34,14 +37,15 @@ const SignInPage = (props) => {
 
   return (
     <div>
-      <h1>Sign in</h1>
+      
       <form className='form-content-right' onSubmit={(e) => handleSubmit(e)}>
+        <h1>Sign In</h1>
         <div className='form-inputs'>
+        
           <label htmlFor='email' className='form-label'>
             Email
             <TextInput
               className='form-input'
-              placeholder='email'
               name='email'
               type='email'
               onChange={emailField}
@@ -53,7 +57,6 @@ const SignInPage = (props) => {
             Password
             <TextInput
               className='form-input'
-              placeholder='password'
               name='password'
               type='password'
               onChange={passwordField}
@@ -61,13 +64,13 @@ const SignInPage = (props) => {
           </label>
         </div>
         <div>
-          <button
+        <Button
             className='btns'
             buttonStyle='btn--outline'
             buttonSize='btn--large'
           >
             Submit
-          </button>
+          </Button>
         </div>
       </form>
     </div>

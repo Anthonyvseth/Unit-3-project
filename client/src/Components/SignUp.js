@@ -57,6 +57,7 @@ const SignUp = (props) => {
         } catch (error) {
             setFormError(true)
         }
+        
     }
 
     return (
@@ -69,7 +70,7 @@ const SignUp = (props) => {
                 <div className="form-inputs">
                     <label htmlFor='firtName'
                         className="form-label">
-                        First Name
+                        
                         <TextInput
                             type="text"
                             name='firstName'
@@ -82,7 +83,7 @@ const SignUp = (props) => {
                 <div className="form-inputs">
                     <label htmlFor='lastName'
                         className="form-label">
-                        Last Name
+                        
                         <TextInput
                             type="text"
                             name='lastName'
@@ -95,7 +96,7 @@ const SignUp = (props) => {
                 <div className="form-inputs">
                     <label htmlFor='email'
                         className="form-label">
-                        Email
+                        
                         <TextInput
                             type="text"
                             name='email'
@@ -108,7 +109,7 @@ const SignUp = (props) => {
                 <div className="form-inputs">
                     <label htmlFor='password'
                         className="form-label">
-                        Password
+                        
                         <TextInput
                             type="text"
                             name='password'
@@ -121,7 +122,7 @@ const SignUp = (props) => {
                 <div className="form-inputs">
                     <label htmlFor='zipcode'
                         className="form-label">
-                        Zipcode
+                        
                         <TextInput
                             type="text"
                             name='zipcode'

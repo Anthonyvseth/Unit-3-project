@@ -49,3 +49,15 @@ export const _SignOutUser = () => {
 const setLocalAccountId = (account_id) => {
   localStorage.setItem('account_id', account_id);
 };
+
+export const __UpdateFocus = async (userData) => {
+  const accountId = localStorage.getItem('account_id')
+  console.log("__UpdateFocus HIT, accountId:", accountId, `userData:`, userData);
+  try {
+    const updatedFocus = await ApiClient.put(`/accounts/${accountId}`, userData)
+    console.log(`updatedFocus variable:`, updatedFocus)
+    return updatedFocus
+  } catch(error) {
+    throw error
+  }
+};

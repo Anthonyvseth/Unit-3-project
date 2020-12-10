@@ -11,6 +11,7 @@ import { __GetProfile } from '../services/AccountService';
 
 export default function Router() {
     const [account, setAccount] = useState(null);
+    const [needsRefresh, setNeedsRefresh] = useState(false)
 
     //  create fn to retrieve account from backend
     //  if localstorage contains an account_id key and value
@@ -19,32 +20,26 @@ export default function Router() {
     const retrieveAccount = async (account_id) => {
         try {
             const x = await __GetProfile(parseInt(localAccountId));
-            console.log('whats x:', x);
+            // console.log('whats x:', x);
             setAccount(x);
-            console.log('accountState: ', account);
+            // console.log('accountState: ', account);
             return x;
         } catch (error) {
-            console.log('retr. account: ', error);
+            // console.log('retr. account: ', error);
         }
     };
 
-    const clearAccount = () => {
-        setAccount(null)
-    }
-
     console.log('localAccountId: ', localAccountId);
-    if (account === null && localAccountId !== null) {
+    if ((account === null && localAccountId !== null) || needsRefresh) {
+        setNeedsRefresh(false)
         const retrievedAccount = retrieveAccount(localAccountId);
         console.log('ret acct: ', retrievedAccount);
-        // setAccount(retrievedAccount);
-        // console.log('accountState: ', account);
+        setAccount(retrievedAccount);
     }
 
-    useEffect(() => {
-        setAccount();
-    }, []);
-
-
+    const clearAccount = () => {
+        setAccount(null);
+    };
 
     return (
         <main>
@@ -53,17 +48,23 @@ export default function Router() {
                 <Route
                     exact
                     path='/register'
-                    component={(props) => <SignUpPage {...props} />}
+                    component={(props) => <SignUpPage {...props} setAccount={setAccount} />}
                 />
                 <Route
                     exact
                     path='/signin'
-                    component={(props) => <SignInPage {...props} />}
+                    component={(props) => <SignInPage {...props} setAccount={setAccount} />}
                 />
                 <ProtectedRoute
                     authenticated={account !== null}
-                    path="/home"
-                    component={(props) => <Home {...props} account={account} onClickSignOut={clearAccount} />}
+                    path='/home'
+                    component={(props) => (
+                        <Home
+                            {...props}
+                            account={account}
+                            onClickSignOut={clearAccount}
+                            setNeedsRefresh={setNeedsRefresh} />
+                    )}
                 />
             </Switch>
         </main>

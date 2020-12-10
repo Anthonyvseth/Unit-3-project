@@ -31,7 +31,7 @@ const SignUpPage = (props) => {
       case 'password':
         setPassword(fieldValue);
         break;
-      case 'zipCode':
+      case 'zipcode':
         setZipCode(fieldValue);
         break;
     }
@@ -48,14 +48,12 @@ const SignUpPage = (props) => {
       password: password,
       zipCode: zipCode,
     };
-
+    console.log('formState: ', formState)
     try {
-      const signUpResponse = await __RegisterUser(formState);
-      console.log('Response - SignUp: ', signUpResponse);
-
+      const accountResponse = await __RegisterUser(formState);
+      props.setAccount(accountResponse)
+      // console.log('Response - SignUp: ', signUpResponse);
       props.history.push('/home');
-      // props.toggleAuthenticated(true, loginData.user, () => this.props.history.push('/list')
-      // )
     } catch (error) {
       setFormError(true);
     }
@@ -72,7 +70,6 @@ const SignUpPage = (props) => {
               type='text'
               name='firstName'
               className='form-input'
-              placeholder='First Name'
               onChange={formFieldChange}
             />
           </label>
@@ -84,7 +81,6 @@ const SignUpPage = (props) => {
               type='text'
               name='lastName'
               className='form-input'
-              placeholder='Last Name'
               onChange={formFieldChange}
             />
           </label>
@@ -96,7 +92,6 @@ const SignUpPage = (props) => {
               type='text'
               name='email'
               className='form-input'
-              placeholder='Email'
               onChange={formFieldChange}
             />
           </label>
@@ -108,7 +103,6 @@ const SignUpPage = (props) => {
               type='text'
               name='password'
               className='form-input'
-              placeholder='Password'
               onChange={formFieldChange}
             />
           </label>
@@ -120,7 +114,6 @@ const SignUpPage = (props) => {
               type='text'
               name='zipcode'
               className='form-input'
-              placeholder='Zipcode'
               onChange={formFieldChange}
             />
           </label>
@@ -134,12 +127,13 @@ const SignUpPage = (props) => {
             Submit
           </Button>
         </div>
-      </form>
-      <div>
+        <div>
         <NavLink to='/signin' activeclassName='nav-active'>
-          <h2>Existing user go to login</h2>
+          <h2>Login Here</h2>
         </NavLink>
       </div>
+      </form>
+      
     </div>
   );
 };

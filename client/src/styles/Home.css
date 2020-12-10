@@ -1,0 +1,25 @@
+.Home-container {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+};
+
+.weather-item {
+    size: 10;
+    height: 100px;
+    border-bottom: 2px solid transparent;
+    width: 28px;  
+    height: 28px;
+    transform: translate(25%, 50%)
+  }
+  
+  .weather-item:hover {
+    border-bottom: 2px solid #f00946;
+    transform: scale(1.5);
+    transition: all 0.3s ease;;
+  }
