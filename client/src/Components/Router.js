@@ -9,6 +9,8 @@ import ProtectedRoute from '../components/ProtectedRoute'
 import { Switch, Route } from 'react-router-dom';
 import { __GetProfile } from '../services/AccountService';
 
+import '../styles/App.css';
+
 export default function Router() {
     const [account, setAccount] = useState(null);
     const [needsRefresh, setNeedsRefresh] = useState(false)
