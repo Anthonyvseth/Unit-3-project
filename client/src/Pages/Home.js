@@ -38,7 +38,10 @@ export default (props) => {
         <h1>Make Your Day</h1>
         <h2> Welcome, {props.account.firstName}</h2>
         <div className='landing-btns'>
-          <Focus account={props.account} />
+          <Focus 
+          account={props.account} 
+          setNeedsRefresh={setNeedsRefresh}
+          />
         </div>
         <h1>
           <DateTime></DateTime>

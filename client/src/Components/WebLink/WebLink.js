@@ -16,7 +16,8 @@ const WebLink = (props) => {
 
   return (
     <div>
-      <a href={`https://${weblinks.url}`} className='webLink'>
+      <a className="webLink" href={`https://${weblinks.url}`}>
+        <img class="icon-favicon" src={`https://icons.duckduckgo.com/ip2/${weblinks.url}.ico`}/>
         {weblinks.url}
       </a>
       <button onClick={(e) => handleDelete(e)}>x</button>
