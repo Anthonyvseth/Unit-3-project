@@ -17,7 +17,7 @@ const WebLink = (props) => {
   };
 
   return (
-    <div>
+    <div className="bookmarks-modal">
       <a className="webLink" href={`https://${weblinks.url}`}>
         <img
           class="icon-favicon"
@@ -26,7 +26,7 @@ const WebLink = (props) => {
         {weblinks.url}
       </a>
       <FontAwesomeIcon
-        className="fas fa-white"
+        className="fas-inlist"
         icon={faTimesCircle}
         onClick={(e) => handleDelete(e)}
       />

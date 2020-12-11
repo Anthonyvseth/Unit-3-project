@@ -1,5 +1,6 @@
 node_modules
 package-lock.json
+.env
 /.idea/httpRequests/2020-12-09T121311.200.json
 /.idea/codeStyles/codeStyleConfig.xml
 /.idea/dataSources/d6d3cc51-0333-4a27-a41e-868d9221b334.xml

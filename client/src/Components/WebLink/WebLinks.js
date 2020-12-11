@@ -39,10 +39,11 @@ const WebLinks = (props) => {
             >
                 <Modal.Header closeButton>
                     <Modal.Title>
-                        <WebLinkForm {...props} setNeedsRefresh={setNeedsRefresh}/>
+                        Favorites
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body centered="true">
+                    <WebLinkForm {...props} setNeedsRefresh={setNeedsRefresh}/>
                     <WebLinkList {...props} setNeedsRefresh={setNeedsRefresh}/>
                 </Modal.Body>
             </Modal>

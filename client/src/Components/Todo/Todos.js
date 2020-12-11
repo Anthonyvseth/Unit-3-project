@@ -37,16 +37,16 @@ export default (props) => {
             backdrop='static'
             keyboard={false}
           >
-            <Modal.Header closeButton>
-              <Modal.Title>
+            <Modal.Header className='center-words' closeButton>
+              <Modal.Title> To Do List
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
                 <TodoForm
                   {...props}
                   account={account}
                   setNeedsRefresh={setNeedsRefresh}
                 />{' '}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
               <TodoList account={account} setNeedsRefresh={setNeedsRefresh} />
             </Modal.Body>
           </Modal>
