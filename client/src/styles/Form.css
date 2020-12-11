@@ -80,7 +80,7 @@ input {
   text-align: center;
 }
 
-.focus-placeholder{
+.focus-placeholder::placeholder{
   color: white;
   text-align: center;
 }
