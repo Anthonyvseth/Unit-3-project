@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { __GetWeather } from "../services/WeatherService";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { __UpdateZip } from "../services/AccountService";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
-import TextInput from "../components/TextInput";
+
+import { __GetWeather } from "../services/WeatherService";
 
 export default (props) => {
   let [weatherData, setWeatherData] = useState(null);
@@ -48,6 +44,7 @@ export default (props) => {
     return (
       <div>
         {console.log(weatherData.weather[0].description)}
+
         <button className={"btn-list"} onClick={handleShow}>
           <img
             src={
@@ -57,6 +54,9 @@ export default (props) => {
             alt="weather icon"
             />
         </button>
+        <div>
+          {weatherData.main.feels_like}°F
+        </div>
         <Modal
           show={show}
           onHide={handleClose}
