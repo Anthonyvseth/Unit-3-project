@@ -1,42 +1,32 @@
-import React, { useState } from "react";
-import { Redirect } from 'react-router'
+import React, {useState} from "react";
+import {Redirect} from 'react-router'
 
-import "../styles/Button.css";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
 
-const STYLES = ["btn--primary", "btn--outline", "btn--test"];
+export default ({children, type, onClick, buttonStyle, buttonSize}) => {
+    const [signedOut, setSignedOut] = useState(false)
 
-const SIZES = ["btn--medium", "btn--large"];
+    const clearAccount = () => {
+        localStorage.clear("account_id")
+        onClick()
+        setSignedOut(true)
+    }
 
-const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
-  const [signedOut, setSignedOut] = useState(false)
-
-  const checkButtonStyle = STYLES.includes(buttonStyle)
-    ? buttonStyle
-    : STYLES[0];
-
-  const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
-
-  const clearAccount = () => {
-    console.log('HIT clearAccount')
-    localStorage.clear("account_id")
-    onClick()
-    setSignedOut(true)
-  }
-
-  if (signedOut) {
-    < Redirect to='/' push={true} />
-  } else {
-    return (
-      <button
-        className='btns'
-        buttonStyle='btn--outline'
-        buttonSize='btn--medium'
-        onClick={(e) => clearAccount()}
-      >
-        Sign Out
-      </button>
-    );
-  }
+    if (signedOut) {
+        < Redirect to='/' push={true}/>
+    } else {
+        return (
+            <button
+                className={'btn-list'}
+                onClick={(e) => clearAccount()}
+            >
+                <FontAwesomeIcon
+                    className="fas fa-white"
+                    icon={faSignOutAlt}
+                    inverse
+                />
+            </button>
+        );
+    }
 };
-
-export default Button;

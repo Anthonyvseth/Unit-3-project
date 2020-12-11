@@ -1,10 +1,12 @@
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList } from "@fortawesome/free-solid-svg-icons";
 
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
-
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 
 export default (props) => {
   const { account, setNeedsRefresh } = props;
@@ -18,9 +20,16 @@ export default (props) => {
     <div>
       <div>
         <>
-          <Button variant='secondary' onClick={handleShow}>
-            Todo's
-          </Button>
+          <button
+              className={'btn-list'}
+              // variant='secondary'
+              onClick={handleShow}>
+            <FontAwesomeIcon
+                className="fas fa-white"
+                icon={faList}
+                inverse
+            />
+          </button>
 
           <Modal
             show={show}
@@ -28,16 +37,16 @@ export default (props) => {
             backdrop='static'
             keyboard={false}
           >
-            <Modal.Header closeButton>
-              <Modal.Title>
+            <Modal.Header className='center-words' closeButton>
+              <Modal.Title> To Do List
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
                 <TodoForm
                   {...props}
                   account={account}
                   setNeedsRefresh={setNeedsRefresh}
                 />{' '}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
               <TodoList account={account} setNeedsRefresh={setNeedsRefresh} />
             </Modal.Body>
           </Modal>
