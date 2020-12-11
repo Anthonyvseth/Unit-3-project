@@ -2,7 +2,7 @@ import React from 'react';
 import Todo from './Todo';
 
 export default (props) => {
-  const { account, setNeedsRefresh } = props
+  const { setNeedsRefresh } = props
   const { todos } = props.account
 
   if (todos !== null && todos !== undefined && todos.length > 0) {

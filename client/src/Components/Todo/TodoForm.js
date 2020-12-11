@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { __CreateTodo } from "../../services/TodoService";
 import TextInput from "../TextInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckSquare, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
+import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 
 function TodoForm(props) {
   const { setNeedsRefresh } = props;
@@ -12,7 +12,6 @@ function TodoForm(props) {
   const handleChange = (e) => {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
-    console.log("HIT formFieldChange: ", fieldName, fieldValue);
     switch (fieldName) {
       case "description":
         setDescription(fieldValue);
@@ -24,10 +23,8 @@ function TodoForm(props) {
     const formState = {
       description: description,
     };
-    console.log("handlesubmit formstate ", formState);
     try {
       const addTodo = await __CreateTodo(formState);
-      console.log("add to do", addTodo);
       setNeedsRefresh(true);
       props.history.push("/home");
     } catch (error) {
@@ -44,7 +41,6 @@ function TodoForm(props) {
         placeholder="To Do?"
         onChange={handleChange}
       />
-      {/* <button onClick={handleSubmit} className='todo-button'> */}
       <FontAwesomeIcon
         className="fas fa-white"
         icon={faPlusSquare}
