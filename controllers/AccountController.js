@@ -98,7 +98,7 @@ const signIn = async (req, res, next) => {
                 ]
             }
         )
-        console.log("*****signIn: ", entity)
+        console.log("*****signIn: ", account)
         res.send(account)
     } catch (error) {
         console.log(error)
