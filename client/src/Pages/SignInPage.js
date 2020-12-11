@@ -4,9 +4,6 @@ import { __LoginUser } from '../services/AccountService';
 import '../styles/Button.css'
 import '../styles/SignUp.css'
 
-
-
-
 const SignInPage = (props) => {
     const {setAccount} = props
     const [loginValue, setLoginValue] = useState('');

@@ -1,25 +1,23 @@
 import React, {useState} from 'react';
+import Modal from 'react-bootstrap/Modal';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
+
+
 import WebLinkForm from './WebLinkForm';
 import WebLinkList from './WebLinkList';
-
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGlobeAmericas, faList} from "@fortawesome/free-solid-svg-icons";
-
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import '../../styles/weblinks.css'
 
 const WebLinks = (props) => {
     const {setNeedsRefresh} = props;
-    // console.log('weblinks: ', props);
-    // const { weblinks } = props.account;
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     return (
-        <div className='list' >
+        <div className='list'>
             <button
                 className={'btn-list'}
                 variant='secondary'

@@ -1,11 +1,10 @@
 import React from 'react';
-// Import delete service
 import { __DeleteWeblink } from '../../services/WeblinkService';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const WebLink = (props) => {
-  // destructed weblinks from props for url access
+
   const { weblinks, setNeedsRefresh } = props;
 
   const handleDelete = async (e) => {

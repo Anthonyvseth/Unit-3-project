@@ -7,7 +7,6 @@ import { __RegisterUser } from '../services/AccountService';
 import '../styles/SignUp.css'
 import '../styles/Button.css'
 
-
 const SignUpPage = (props) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setlastName] = useState('');
@@ -19,7 +18,6 @@ const SignUpPage = (props) => {
   const formFieldChange = (e) => {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
-    console.log('HIT formFieldChange: ', fieldName, fieldValue);
     switch (fieldName) {
       case 'firstName':
         setFirstName(fieldValue);
@@ -40,7 +38,6 @@ const SignUpPage = (props) => {
   };
 
   const handleSubmit = async (event) => {
-    console.log('HIT handleSubmit SignUp');
     event.preventDefault();
 
     const formState = {
@@ -50,10 +47,8 @@ const SignUpPage = (props) => {
       password: password,
       zipCode: zipCode,
     };
-    console.log('formState: ', formState)
     try {
       const accountResponse = await __RegisterUser(formState);
-      // console.log('Response - SignUp: ', signUpResponse);
       props.setAccount(accountResponse)
       props.history.push('/home');
     } catch (error) {
