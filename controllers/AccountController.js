@@ -22,6 +22,7 @@ const getOne = async (req, res) => {
                 }
             ]
         })
+        console.log("*****getOne: ", entity)
         res.send(entity)
     } catch (error) {
         throw error
@@ -97,6 +98,7 @@ const signIn = async (req, res, next) => {
                 ]
             }
         )
+        console.log("*****signIn: ", entity)
         res.send(account)
     } catch (error) {
         console.log(error)
