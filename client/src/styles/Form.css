@@ -80,12 +80,16 @@ input {
   text-align: center;
 }
 
-.focus-placeholder{
+.focus-placeholder::placeholder{
   color: white;
   text-align: center;
 }
 
 .todo-form {
+  color: black;
+}
+
+.todo-form input[type=text] {
   color: black;
 }
 
