@@ -39,7 +39,7 @@ const WebLinkForm = (props) => {
 
   return (
     <div>
-      <form onSubmit={(e) => handleSubmit(e)} className="favorites-form">
+      <form onSubmit={(e) => handleSubmit(e)} className="todo-form">
         <input
           type="text"
           id="url"

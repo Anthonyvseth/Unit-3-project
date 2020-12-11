@@ -89,6 +89,10 @@ input {
   color: black;
 }
 
+.todo-form input[type=text] {
+  color: black;
+}
+
 textarea {
   color: black;
 }
