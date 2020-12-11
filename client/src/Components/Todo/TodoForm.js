@@ -38,6 +38,7 @@ function TodoForm(props) {
   return (
     <form onSubmit={(e) => handleSubmit(e)} className="todo-form">
       <TextInput
+        className="todo-form"
         type="text"
         name="description"
         placeholder="To Do?"

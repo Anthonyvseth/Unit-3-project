@@ -47,6 +47,7 @@ const Focus = (props) => {
       <div className="focus-form">
         <form onSubmit={(e) => handleSubmit(e)}>
           <input
+            className="focus-placeholder"
             type="text"
             name="focus"
             value={focusValue}

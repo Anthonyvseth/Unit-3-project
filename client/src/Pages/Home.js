@@ -42,9 +42,7 @@ export default (props) => {
                     </div>
                 </div>
                 <div className='home-grid-center-bottom'>
-                        <h1>
-                            <DateTime></DateTime>
-                        </h1>
+                            <DateTime />
                 </div>
                 <div className={'home-grid-bottom-left'}>
                     <div className={'home-flex-col-bottom'}>
