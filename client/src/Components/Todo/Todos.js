@@ -22,11 +22,13 @@ export default (props) => {
       <div>
         <>
           <button
-              variant='secondary'
+              className={'btn-list'}
+              // variant='secondary'
               onClick={handleShow}>
             <FontAwesomeIcon
                 className="fas fa-white"
                 icon={faList}
+                inverse
             />
           </button>
 
