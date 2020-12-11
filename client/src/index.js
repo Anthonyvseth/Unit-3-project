@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/index.css';
-import '../styles/SignUp.css'
-import '../styles/Button.css'
+import './styles/SignUp.css'
+import './styles/Button.css'
 
 
 ReactDOM.render(
