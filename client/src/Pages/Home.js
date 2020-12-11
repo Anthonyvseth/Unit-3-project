@@ -36,13 +36,15 @@ export default (props) => {
                     <div className={'home-flex-col-top home-flex-col-spread'}>
                         <h1>Make Your Day</h1>
                         <h2>Welcome, {props.account.firstName}</h2>
+                        <h2>
+                            <Focus account={props.account} setNeedsRefresh={setNeedsRefresh}/>
+                        </h2>
+                    </div>
+                </div>
+                <div className='home-grid-center-bottom'>
                         <h1>
                             <DateTime></DateTime>
                         </h1>
-                        <div className='landing-btns'>
-                            <Focus account={props.account} setNeedsRefresh={setNeedsRefresh}/>
-                        </div>
-                    </div>
                 </div>
                 <div className={'home-grid-bottom-left'}>
                     <div className={'home-flex-col-bottom'}>

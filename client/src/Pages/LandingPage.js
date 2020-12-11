@@ -14,11 +14,7 @@ const LandingPage = () => {
         <video src='/videos/video-1.mp4' autoPlay loop muted />
 
             <h1>Make Your Day</h1>
-<<<<<<< HEAD
-            <p></p>
-=======
             <p>“A browser based daily planner and motivator”</p>
->>>>>>> 1f0790de008695b1cb3050a9ead87ae26d00fdaa
             <div className="landing-btns">
             <NavLink 
             to='/register'

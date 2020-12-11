@@ -52,3 +52,9 @@ justify-content: space-between;
   opacity: .5;
   padding: 10px;
 }
+
+.focus-form{
+  grid-row-start: 2;
+  justify-self: center;
+  margin-top: 10px;
+}
