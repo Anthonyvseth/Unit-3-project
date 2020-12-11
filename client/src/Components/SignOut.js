@@ -28,11 +28,9 @@ const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
   } else {
     return (
       <button
-        className={`btn 
-      ${checkButtonStyle}
-      ${checkButtonSize}
-      sign-out-text 
-      `}
+        className='btns'
+        buttonStyle='btn--outline'
+        buttonSize='btn--medium'
         onClick={(e) => clearAccount()}
       >
         Sign Out
