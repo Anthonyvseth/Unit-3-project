@@ -44,3 +44,15 @@
     color: #000000;
     transition: 250ms;
   }
+
+  .btn-list {
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+  }
+
+.btn-list:hover {
+  transition: all 0.3s ease-out;
+  border: white solid 2px;
+  transition: 250ms;
+}

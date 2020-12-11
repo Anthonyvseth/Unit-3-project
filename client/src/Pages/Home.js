@@ -1,13 +1,15 @@
 import React from 'react';
 
 import DateTime from '../components/DateTime';
-import SignOut from '../components/SignOut';
-import WebLinks from '../components/WebLink/WebLinks';
-import Todos from '../components/Todo/Todos';
 import Focus from '../components/Focus';
+import SignOut from '../components/SignOut';
+import Todos from '../components/Todo/Todos';
 import Weather from '../components/Weather';
+import WebLinks from '../components/WebLink/WebLinks';
+
 import '../styles/Home.css';
 import '../styles/HomeLayout.css';
+
 
 // import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
