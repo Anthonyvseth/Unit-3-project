@@ -48,7 +48,7 @@ export default (props) => {
                 </div>
                 <div className={'home-grid-bottom-right'}>
                     <div className={'home-flex-col-bottom'}>
-                        {/*<Weather/>*/}
+                        <Weather/>
                     </div>
                 </div>
             </div>
