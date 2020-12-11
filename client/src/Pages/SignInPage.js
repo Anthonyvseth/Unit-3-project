@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import TextInput from '../components/TextInput';
+import TextInput from '../Components/TextInput';
 import { __LoginUser } from '../services/AccountService';
 import '../styles/Button.css'
 import '../styles/SignUp.css'

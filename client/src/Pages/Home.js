@@ -1,11 +1,11 @@
 import React from 'react';
 
-import DateTime from '../components/DateTime';
-import Focus from '../components/Focus';
-import SignOut from '../components/SignOut';
-import Todos from '../components/Todo/Todos';
-import Weather from '../components/Weather';
-import WebLinks from '../components/WebLink/WebLinks';
+import DateTime from '../Components/DateTime';
+import Focus from '../Components/Focus';
+import SignOut from '../Components/SignOut';
+import Todos from '../Components/Todo/Todos';
+import Weather from '../Components/Weather';
+import WebLinks from '../Components/WebLink/WebLinks';
 
 import '../styles/Home.css';
 import '../styles/HomeLayout.css';
