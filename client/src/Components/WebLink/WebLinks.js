@@ -19,7 +19,7 @@ const WebLinks = (props) => {
     const handleShow = () => setShow(true);
 
     return (
-        <div className='list'>
+        <div className='list' >
             <button
                 className={'btn-list'}
                 variant='secondary'
@@ -38,12 +38,12 @@ const WebLinks = (props) => {
                 keyboard={false}
                 closeLabel={false}
             >
-                <Modal.Header closeButton>
+                <Modal.Header className='weblinks-background-color' closeButton>
                     <Modal.Title>
                         Favorites
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body centered="true">
+                <Modal.Body centered="true" className='weblinks-background-color'>
                     <WebLinkForm {...props} setNeedsRefresh={setNeedsRefresh}/>
                     <WebLinkList {...props} setNeedsRefresh={setNeedsRefresh}/>
                 </Modal.Body>
