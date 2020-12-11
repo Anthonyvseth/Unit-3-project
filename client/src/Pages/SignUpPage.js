@@ -7,6 +7,7 @@ import { __RegisterUser } from '../services/AccountService';
 import '../styles/SignUp.css'
 import '../styles/Button.css'
 
+
 const SignUpPage = (props) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setlastName] = useState('');
