@@ -6,43 +6,55 @@ import WebLinks from '../components/WebLink/WebLinks';
 import Todos from '../components/Todo/Todos';
 import Focus from '../components/Focus';
 import Weather from '../components/Weather';
+import '../styles/Home.css';
+import '../styles/HomeLayout.css';
+
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 
 export default (props) => {
-  //console.log('home props: ', props.account);
-  const { account, onClickSignOut, setNeedsRefresh } = props;
+    //console.log('home props: ', props.account);
+    const {account, onClickSignOut, setNeedsRefresh} = props;
 
-  if (account !== null && account !== undefined) {
-
-    return (
-      <div className='landing-container'>
-        <h1>Make Your Day</h1>
-        <div>
-          <Weather />
-        </div>
-        <h2> Welcome, {props.account.firstName}</h2>
-        <div className='landing-btns'>
-          <Focus account={props.account} />
-        </div>
-        <h1>
-          <DateTime></DateTime>
-        </h1>
-        <div>
-          <WebLinks
-            {...props}
-            setNeedsRefresh={setNeedsRefresh} />
-        </div>
-        <div>
-          <Todos // we are going to need to send todolist as props
-            account={account}
-            setNeedsRefresh={setNeedsRefresh}
-          />
-          <SignOut onClick={onClickSignOut} />
-        </div>
-      </div>
-    )
-  } else {
-    <div>
-      Loading...
-  </div>
-  }
+    if (account !== null && account !== undefined) {
+        return (
+            <div className={'home-container-grid'}>
+                <div className={'home-grid-top-left'}>
+                    <div className={'home-flex-col-top'}>
+                        <WebLinks {...props} setNeedsRefresh={setNeedsRefresh}/>
+                    </div>
+                </div>
+                <div className={'home-grid-top-right'}>
+                    <div className={'home-flex-col-top'}>
+                        <Todos account={account} setNeedsRefresh={setNeedsRefresh}/>
+                    </div>
+                </div>
+                <div className='home-grid-center'>
+                    <div className={'home-flex-col-top home-flex-col-spread'}>
+                        <h1>Make Your Day</h1>
+                        <h2>Welcome, {props.account.firstName}</h2>
+                        <h1>
+                            <DateTime></DateTime>
+                        </h1>
+                        <div className='landing-btns'>
+                            <Focus account={props.account} setNeedsRefresh={setNeedsRefresh}/>
+                        </div>
+                    </div>
+                </div>
+                <div className={'home-grid-bottom-left'}>
+                    <div className={'home-flex-col-bottom'}>
+                        <SignOut onClick={onClickSignOut}/>
+                    </div>
+                </div>
+                <div className={'home-grid-bottom-right'}>
+                    <div className={'home-flex-col-bottom'}>
+                        <Weather/>
+                    </div>
+                </div>
+            </div>
+        );
+    } else {
+        <div>Loading...</div>;
+    }
 };

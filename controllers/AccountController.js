@@ -91,8 +91,8 @@ const signIn = async (req, res, next) => {
                 },
                 include: [
                     {
-                        model: Todo,
-                        as: 'todos',
+                        all: true,
+                        nested: true
                     }
                 ]
             }

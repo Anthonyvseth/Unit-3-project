@@ -30,7 +30,8 @@ const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
       <button
         className={`btn 
       ${checkButtonStyle}
-      ${checkButtonSize} 
+      ${checkButtonSize}
+      sign-out-text 
       `}
         onClick={(e) => clearAccount()}
       >

@@ -61,7 +61,7 @@ const SignUpPage = (props) => {
   };
 
   return (
-    <div>
+    <div className='form-container'>
       <form className='form-content-right' onSubmit={(e) => handleSubmit(e)}>
         <h1>Sign Up</h1>
         <div className='form-inputs'>
