@@ -7,7 +7,6 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
-import {faPlusSquare} from "@fortawesome/free-solid-svg-icons";
 
 export default (props) => {
   const { account, setNeedsRefresh } = props;
