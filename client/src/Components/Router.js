@@ -4,7 +4,7 @@ import Home from '../Pages/Home';
 import LandingPage from '../Pages/LandingPage';
 import SignUpPage from '../Pages/SignUpPage';
 import SignInPage from '../Pages/SignInPage';
-import ProtectedRoute from '../Components/ProtectedRoute'
+import ProtectedRoute from './/ProtectedRoute'
 
 import { Switch, Route } from 'react-router-dom';
 import { __GetProfile } from '../services/AccountService';
