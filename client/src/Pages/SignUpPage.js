@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import TextInput from '../components/TextInput';
 import { __RegisterUser } from '../services/AccountService';
 import '../styles/SignUp.css'
+import '../styles/Button.css'
 
 const SignUpPage = (props) => {
   const [firstName, setFirstName] = useState('');
@@ -119,17 +120,17 @@ const SignUpPage = (props) => {
           </label>
         </div>
         <div>
-          <Button
+          <button
             className='btns'
             buttonStyle='btn--outline'
             buttonSize='btn--large'
           >
             Submit
-          </Button>
+          </button>
         </div>
         <div>
         <NavLink to='/signin' activeclassName='nav-active'>
-          <h2>Login Here</h2>
+        <p>Have an account?</p>
         </NavLink>
       </div>
       </form>

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import TextInput from '../components/TextInput';
 import { __LoginUser } from '../services/AccountService';
-import Button from '../components/Button'
+import '../styles/Button.css'
 import '../styles/SignUp.css'
 
 
