@@ -34,7 +34,8 @@
 .home-grid-center-bottom{
     grid-row-start: 2;
     grid-column: 2;
-    margin-bottom: 0;
+    padding-bottom: 2em;
+
 }
 
 .home-flex-col-top {
@@ -52,3 +53,4 @@
 .home-flex-col-spread {
     justify-content: space-around;
 }
+
