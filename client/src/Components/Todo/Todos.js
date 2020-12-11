@@ -1,10 +1,13 @@
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList } from "@fortawesome/free-solid-svg-icons";
 
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
-
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import {faPlusSquare} from "@fortawesome/free-solid-svg-icons";
 
 export default (props) => {
   const { account, setNeedsRefresh } = props;
@@ -18,9 +21,14 @@ export default (props) => {
     <div>
       <div>
         <>
-          <Button variant='secondary' onClick={handleShow}>
-            Todo's
-          </Button>
+          <button
+              variant='secondary'
+              onClick={handleShow}>
+            <FontAwesomeIcon
+                className="fas fa-white"
+                icon={faList}
+            />
+          </button>
 
           <Modal
             show={show}
