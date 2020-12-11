@@ -25,7 +25,7 @@ const WebLink = (props) => {
         />
         {weblinks.url}
       </a>
-      <FontAwesomeIcon
+      <FontAwesomeIcon 
         className="fas fa-white"
         icon={faTimesCircle}
         onClick={(e) => handleDelete(e)}

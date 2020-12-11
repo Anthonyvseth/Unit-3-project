@@ -4,6 +4,7 @@ import WebLinkList from './WebLinkList';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import '../../styles/weblinks.css'
 
 const WebLinks = (props) => {
   const { setNeedsRefresh } = props;
@@ -20,19 +21,19 @@ const WebLinks = (props) => {
         Links
       </Button>
 
-      <Modal
+      <Modal 
         show={show}
         onHide={handleClose}
         backdrop='static'
         keyboard={false}
         closeLabel={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header className='weblinks-background-color' closeButton>
           <Modal.Title>
             <WebLinkForm {...props} setNeedsRefresh={setNeedsRefresh} />
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className='weblinks-background-color'>
           <WebLinkList {...props} setNeedsRefresh={setNeedsRefresh} />
         </Modal.Body>
       </Modal>
